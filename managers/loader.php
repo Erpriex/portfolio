@@ -11,8 +11,8 @@ echo '
 <script type="text/javascript">
         $(document).ready(function(){
             $(".loader-mep").fadeOut(1000, function() {
-                $("#content").fadeIn(500)
-                $("footer").fadeIn(500)
+                $("#content").fadeIn(1000)
+                $("footer").fadeIn(1000)
         })
     })
 </script>
