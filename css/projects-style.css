@@ -1,0 +1,20 @@
+li.tag-language{
+    background-color: #f0187e;
+    display: inline-block;
+    list-style-type: none;
+    padding: 1px 4px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    font-weight: bold;
+}
+li.tag-framework{
+    background-color: #B60CF0;
+    display: inline-block;
+    list-style-type: none;
+    padding: 1px 4px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    font-weight: bold;
+}

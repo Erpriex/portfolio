@@ -4,7 +4,7 @@
     <?php
     include "./assets/depends.php";
     ?>
-	<title>Clément Trempé • Portfolio</title>
+	<title>Clément Trempé | Développeur d'application</title>
 </head>
 <body>
 
