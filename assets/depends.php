@@ -2,6 +2,10 @@
 echo '
 <meta charset="utf-8">
 
+<meta name="author" content="Clément Trempé">
+<meta property="site_name" content="Clément Trempé">
+<meta name="theme-color" content="#ff5555">
+
 <link rel="icon" type="image/png" href="./img/ClémentTrempé2.jpg" />
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
