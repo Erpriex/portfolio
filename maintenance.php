@@ -8,7 +8,7 @@ header('Retry-After: 3600');
     <?php
     include "./assets/depends.php";
     ?>
-    <title>Maintenance | Clément Trempé - Développeur d'application</title>
+    <title>Maintenance | Clément Trempé • Développeur d'application</title>
 </head>
 <body>
     <?php

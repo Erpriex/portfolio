@@ -6,7 +6,12 @@ echo '
 <meta property="site_name" content="Clément Trempé">
 <meta name="theme-color" content="#ff5555">
 
-<link rel="icon" type="image/png" href="./img/ClémentTrempé2.jpg" />
+<meta property="og:title" content="Clément Trempé • Développeur d\'application">
+<meta property="og:site_name" content="Clément Trempé">
+<meta property="og:image" content="http://ctrempe.fr/img/ClémentTrempé2.jpg">
+<meta name="keywords" content="Clément Trempé, ctrempe.fr, développeur, java, javascript, js, html, css, C#, nodejs">
+
+<link rel="icon" type="image/png" href="http://ctrempe.fr/img/ClémentTrempé2.jpg">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -4,7 +4,7 @@
     <?php
     include "./assets/depends.php";
     ?>
-	<title>CV | Clément Trempé - Développeur d'application</title>
+	<title>CV | Clément Trempé • Développeur d'application</title>
 </head>
 <body>
 

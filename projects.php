@@ -5,7 +5,7 @@
     include "./assets/depends.php";
     ?>
     <link rel="stylesheet" type="text/css" href="./css/projects-style.css">
-	<title>Réalisations | Clément Trempé - Développeur d'application</title>
+	<title>Réalisations | Clément Trempé • Développeur d'application</title>
 </head>
 <body>
 
