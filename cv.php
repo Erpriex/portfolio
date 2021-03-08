@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col">
                     <div class="line-break"></div>
-                    <img class="center" src="./img/Logo_Vaucanson.png" width="410" height="150">
+                    <img class="center" src="./img/Logo_Vaucanson.PNG" width="410" height="150">
                 </div>
                 <div class="col">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2812.734001952071!2d5.706148815075578!3d45.17223606089916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4a0980843c1%3A0xf8a30e8cdfb4de2b!2sLyc%C3%A9e%20Polyvalent%20Vaucanson!5e0!3m2!1sfr!2sfr!4v1615114073336!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
