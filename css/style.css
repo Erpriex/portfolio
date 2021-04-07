@@ -95,6 +95,12 @@ div.page-mep{
     padding-bottom: 40px;
 }
 
+.gray-display{
+    background-color: #f3f3f3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 footer{
     background-color: #f3f3f3;
     padding-top: 1px;

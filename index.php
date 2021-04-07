@@ -25,18 +25,26 @@
         <div class="line-break"></div>
         <div class="line-break"></div>
         
-        <div class="container">
-            
-            <h3 class="center">Présentation</h3>
-            <div class="line-break"></div>
-            <div class="row">
-                <div class="col">
-                    <p><br>Je m’appelle Clément et suis étudiant en informatique avec pour objectif de m’investir dans le développement, le réseau et l’administration système. Âgé de 18 ans, je porte un grand intérêt pour l’actualité, les relations humaines et l’informatique que je cultive en étant développeur. Originaire de Grenoble, je suis aujourd’hui Angevin dans le cadre de la poursuite de mes études. Concernant ma personnalité, mon entourage a plaisir à dire que je suis quelqu’un de sérieux, calme, appliqué dans son travail et qui aime s’investir dans ce qui me passionne.</p>
+        <div class="gray-display">
+            <div class="container">
+                
+                <div class="gray-display">
+                    <h3 class="center">Présentation</h3>
+                    <div class="line-break"></div>
+                    <div class="row">
+                        <div class="col">
+                            <p><br>Je m’appelle Clément et suis étudiant en informatique avec pour objectif de m’investir dans le développement, le réseau et l’administration système. Âgé de 18 ans, je porte un grand intérêt pour l’actualité, les relations humaines et l’informatique que je cultive en étant développeur. Originaire de Grenoble, je suis aujourd’hui Angevin dans le cadre de la poursuite de mes études. Concernant ma personnalité, mon entourage a plaisir à dire que je suis quelqu’un de sérieux, calme, appliqué dans son travail et qui aime s’investir dans ce qui me passionne.</p>
+                        </div>
+                        <div class="col center">
+                            <img src="./img/ClémentTrempé.jpg" width="300" height="300">
+                        </div>
+                    </div>
                 </div>
-                <div class="col center">
-                    <img src="./img/ClémentTrempé.jpg" width="300" height="300">
-                </div>
+
             </div>
+        </div>
+
+        <div class="container">
 
             <div class="line-break"></div>
             <div class="line-break"></div>
@@ -57,6 +65,7 @@
                     <img src="./img/skills/nodejs.png" title="NodeJS" width="50" height="30">
                     <img src="./img/skills/php.png" title="PHP" width="50" height="30">
                     <img src="./img/skills/c%23.png" title="C#" width="50" height="50">
+                    <img src="./img/skills/rabbitmq.png" title="RabbitMQ" width="50" height="50">
                 </div>
                 <div class="col">
                     <h5>Base de données</h5>
