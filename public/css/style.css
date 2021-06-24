@@ -22,11 +22,6 @@ body{
     border-left: 3px solid #387936;
 }
 
-.title-page{
-    margin-top: 100px;
-    margin-left: 60px;
-}
-
 .spacer {
     margin-top: 7%;
     margin-bottom: 7%;
@@ -40,36 +35,3 @@ body{
 .fix{
     position: fixed;
 }
-
-/* -- Presentation -- */
-
-.presentation-text{
-    text-align: justify;
-}
-
-/* -- Compétences -- */
-
-.skills{
-    margin-top: 5%;
-}
-
-/* -- Right -- */
-
-.cv-btn{
-    margin-left: 80px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-.rs{
-    /*margin-top: 10%;*/
-    margin-bottom: 10%;
-}
-
-.right-section{
-    margin-left: 15%;
-    margin-top: 10%;
-}
-
-/* -- Timeline formation -- */
-
