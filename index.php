@@ -26,7 +26,7 @@
                             <p class="lead">Étudiant en informatique</p>
                         </div>
                         <div class="col center">
-                            <img src="./public/img/ClémentTrempé.jpg" width="300" height="300">
+                            <img src="./public/img/ClémentTrempé.png" width="300" height="300">
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="col-md-9">
                     <div id="presentation">
                         <h3 class="title montserrat-font">Présentation</h3>
-                        <p class="section presentation-text">Je m’appelle Clément et suis étudiant en informatique avec pour objectif de m’investir dans le développement d'applications. Âgé de 19 ans, je porte un grand intérêt pour l’actualité, les relations humaines et l’informatique que je cultive en étant développeur.<br>Concernant ma personnalité, mon entourage a plaisir à dire que je suis quelqu'un de sérieux, courtois, dynamique et appliqué dans son travail.</p>
+                        <p class="section presentation-text">Je m’appelle Clément et suis étudiant en informatique avec pour objectif de m’investir dans le développement d'applications. Âgé de 19 ans, je porte un grand intérêt pour l’actualité, les relations humaines et l’informatique que je cultive en étant développeur.<br/>Concernant ma personnalité, mon entourage a plaisir à dire que je suis quelqu'un de sérieux, courtois, dynamique et appliqué dans son travail.</p>
                     </div>
                     <hr class="spacer" style="height: 2px; color: #9AC694; background-color: #9AC694; width: 80%; border: none;">
                     <div id="competences">
