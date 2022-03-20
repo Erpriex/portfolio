@@ -4,7 +4,6 @@ const navMenu = document.getElementById('nav-menu'),
     navClose = document.getElementById('nav-close');
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
 if(navToggle){
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
@@ -12,7 +11,6 @@ if(navToggle){
 }
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
 if(navClose){
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
@@ -69,7 +67,7 @@ tabs.forEach(tab => {
 })
 
 
-/*==================== SERVICES MODAL ====================*/
+/*==================== MODAL ====================*/
 const modalViews = document.querySelectorAll('.portfolio__modal'),
       modalBtns = document.querySelectorAll('.portfolio__button'),
       modalCloses = document.querySelectorAll('.portfolio__modal-close')
@@ -108,9 +106,6 @@ let swiper = new Swiper('.portfolio__container', {
 });
 
 
-/*==================== TESTIMONIAL ====================*/
-
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
@@ -132,7 +127,7 @@ function scrollActive(){
 window.addEventListener('scroll', scrollActive)
 
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
+/*==================== BACKGROUND HEADER ====================*/
 function scrollHeader(){
     const nav = document.getElementById('header')
     if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
