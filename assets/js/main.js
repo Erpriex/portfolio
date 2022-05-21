@@ -73,6 +73,7 @@ const modalViews = document.querySelectorAll('.portfolio__modal'),
       modalCloses = document.querySelectorAll('.portfolio__modal-close')
 
 let modal = function(modalClick){
+    console.log(modalClick);
     modalViews[modalClick].classList.add('active-modal')
 }
 
