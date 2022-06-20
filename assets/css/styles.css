@@ -804,6 +804,7 @@ img{
 button.contact--btn{
     border: none;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*==================== FOOTER ====================*/
