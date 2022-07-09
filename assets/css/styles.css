@@ -185,6 +185,11 @@ img{
     align-items: center;
 }
 
+.img__icon{
+    width: 30px;
+    clip-path:ellipse(50% 50%);
+}
+
 .nav__logo,
 .nav__toggle{
     color: var(--title-color);
