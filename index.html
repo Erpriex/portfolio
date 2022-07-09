@@ -88,28 +88,12 @@
                         </div>
 
                         <div class="home__img">
-                            <!-- <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <mask id="mask0" mask-type="alpha">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547
-                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775
-                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666
-                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                </mask>
-                                <g mask="url(#mask0)">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346
-                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403
-                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028
-                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                    <image class="home__blob-img" x="5" y="-10" href="assets/img/perfil.png"/>
-                                </g>
-                            </svg> -->
                             <img src="assets/img/about.png" alt="" class="about__img">
-
                         </div>
 
                         <div class="home__data">
-                            <h1 class="home__title">Bonjour, je suis Clément</h1>
-                            <h3 class="home__subtitle">Développeur</h3>
+                            <h1 class="home__title">Hello 👋, je suis Clément</h1>
+                            <h3 class="home__subtitle">DevOps</h3>
                             <p class="home__description"></p>
                             <a href="#contact" class="button button--flex">
                                 Me contacter <i class="uil uil-message button__icon"></i>
@@ -385,7 +369,7 @@
                         <div class="qualification__content qualification__active" data-content id="work">
                             <div class="qualification__data">
                                 <div>
-                                    <h3 class="qualification__title">Analyste programmeur</h3>
+                                    <h3 class="qualification__title">IT Assistant</h3>
                                     <span class="qualification__subtitle">Weexa</span>
                                     <div class="qualification__calendar">
                                         <i class="uil uil-calendar-alt"></i>
@@ -420,13 +404,14 @@
 
                         <!--==================== QUALIFICATION CONTENT 2 ====================-->
                         <div class="qualification__content" data-content id="education">
+
                             <div class="qualification__data">
                                 <div>
-                                    <h3 class="qualification__title">BTS Services Informatiques aux Organisations</h3>
-                                    <span class="qualification__subtitle">Lycée Chevrollier - Angers</span>
+                                    <h3 class="qualification__title">Licence pro Développeur FullStack</h3>
+                                    <span class="qualification__subtitle">Université - La Rochelle</span>
                                     <div class="qualification__calendar">
                                         <i class="uil uil-calendar-alt"></i>
-                                        2020 - 2022
+                                        2022 - 2023
                                     </div>
                                 </div>
 
@@ -436,14 +421,24 @@
                                 </div>
                             </div>
 
+
                             <div class="qualification__data">
                                 <div></div>
-
                                 <div>
                                     <span class="qualification__rounder"></span>
-                                    <!-- <span class="qualification__line"></span> -->
+                                    <span class="qualification__line"></span>
                                 </div>
+                                <div>
+                                    <h3 class="qualification__title">BTS Services Informatiques aux Organisations</h3>
+                                    <span class="qualification__subtitle">Lycée Chevrollier - Angers</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2020 - 2022
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="qualification__data">
                                 <div>
                                     <h3 class="qualification__title">BAC STI2D Systèmes d'Informations et Numérique</h3>
                                     <span class="qualification__subtitle">Lycée Vaucanson - Grenoble</span>
@@ -451,6 +446,10 @@
                                         <i class="uil uil-calendar-alt"></i>
                                         2017 - 2020
                                     </div>
+                                </div>
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <!-- <span class="qualification__line"></span> -->
                                 </div>
                             </div>
                         </div>
@@ -493,52 +492,13 @@
                             </div>
                         </div>
 
-                        <!--==================== EDT_LinkGenerator ====================-->
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/img/EDT.jpg" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">Module de gestion de liens de téléchargement de fichiers</h3>
-                                <p class="portfolio__description">Développement FullStack d'un module de gestion de liens de téléchargement de fichiers pour une application de suivi d'échanges EDI</p>
-                                <a href="#projets" onclick="modal(2)" class="button button--flex button--small portfolio__button">
-                                    En savoir plus
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--==================== CyberProtective ====================-->
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/img/cyberprotective.png" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">CyberProtective</h3>
-                                <p class="portfolio__description">Site d'actualité axé sur cybersécurité avec quizz généré aléatoirement en lien avec les articles de la plateforme pour tester ses connaissances.</p>
-                                <a href="#projets" onclick="modal(3)" class="button button--flex button--small portfolio__button">
-                                    En savoir plus
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-
                         <!--==================== Hangman ====================-->
                         <div class="portfolio__content grid swiper-slide">
                             <img src="assets/img/hangman.gif" alt="" class="portfolio__img">
                             <div class="portfolio__data">
                                 <h3 class="portfolio__title">Hangman</h3>
                                 <p class="portfolio__description">Jeu du Pendu avec classement des meilleurs scores, 3 niveaux de difficultés, et configuration des mots du jeu.</p>
-                                <a href="#projets" onclick="modal(4)" class="button button--flex button--small portfolio__button">
-                                    En savoir plus
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--==================== Payslip ====================-->
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/img/Weexa.jpg" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">Application d'envoi de fiches de paie</h3>
-                                <p class="portfolio__description">Création d'une application d'envoi de fiches de paie</p>
-                                <a href="#projets" onclick="modal(5)" class="button button--flex button--small portfolio__button">
+                                <a href="#projets" onclick="modal(2)" class="button button--flex button--small portfolio__button">
                                     En savoir plus
                                     <i class="uil uil-arrow-right button__icon"></i>
                                 </a>
@@ -600,31 +560,6 @@
 
                     <div class="portfolio__modal">
                         <div class="portfolio__modal-content">
-                            <h4 class="portfolio__modal-title">Module de gestion de liens de téléchargement de fichiers</h4>
-                            <i class="uil uil-times portfolio__modal-close"></i>
-                            <div class="portfolio__modal-portfolio grid">
-                                <p>Ce module de téléchargement de fichiers a été développé pour une application de suivi d'échange EDI.</p>
-                                <p>J'ai développé une API REST et une interface d'administration du module.</p>
-                                <p><br>Langages : Java, TypeScript<br>Base de données : MySQL<br>Technologies : SpringBoot, SwaggerUI, Angular, Thymeleaf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio__modal">
-                        <div class="portfolio__modal-content">
-                            <h4 class="portfolio__modal-title">CyberProtective</h4>
-                            <i class="uil uil-times portfolio__modal-close"></i>
-                            <div class="portfolio__modal-portfolio grid">
-                                <p>CyberProtective est une plateforme d'actualité avec un espace membre, et des quizz généré aléatoirement pour tester ses connaissances en lien avec les articles présents sur le site.</p>
-                                <p>L'ensemble de la plateforme est administrée via un client lourd.</p>
-                                <p><br>Affecté sur les parties web et infrastructure, j'ai développé le site web et installé les serveurs d'hébergement et de base de données.</p>
-                                <p><br>Langages : PHP, JavaScript<br>Base de données : MariaDB</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio__modal">
-                        <div class="portfolio__modal-content">
                             <h4 class="portfolio__modal-title">Hangman</h4>
                             <i class="uil uil-times portfolio__modal-close"></i>
                             <div class="portfolio__modal-portfolio grid">
@@ -635,29 +570,6 @@
                                     Voir le GitHub
                                     <i class="uil uil-arrow-right portfolio__modal-linkicon"></i>
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio__modal">
-                        <div class="portfolio__modal-content">
-                            <h4 class="portfolio__modal-title">Application d'envoi de fiches de paie</h4>
-                            <i class="uil uil-times portfolio__modal-close"></i>
-                            <div class="portfolio__modal-portfolio grid">
-                                <p>Conception d'une application d'envoi de fiches de paie pour l'équipe Finance & Administration de l'entreprise.</p>
-                                <p>L'application a été conçue sur un environnement de développement, puis livrée par la suite en production.</p>
-                                <p><br>Technologie : Microsoft Power Automate<br></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio__modal">
-                        <div class="portfolio__modal-content">
-                            <h4 class="portfolio__modal-title">Serveur de Cloud</h4>
-                            <i class="uil uil-times portfolio__modal-close"></i>
-                            <div class="portfolio__modal-portfolio grid">
-                                <p>J'ai installé la solution Nextcloud pour mon utilisation personnelle.</p>
-                                <p>C'est un très bon outil que je recommande pour les personnes qui souhaitent héberger leur propre cloud.</p>
                             </div>
                         </div>
                     </div>
@@ -673,7 +585,7 @@
                 <h2 class="section__title">Autres projets</h2>
                 <span class="section__subtitle"></span>
 
-                <div class="services__container container grid"> <!-- grid -->
+                <div class="services__container container"> <!-- grid -->
                     <!--=============== CheatSheet ===============-->
                     <div class="services__content">
                         <div>
@@ -687,18 +599,7 @@
                         </a>
                     </div>
 
-                    <!--=============== Nextcloud ===============-->
-                    <div class="services__content">
-                        <div>
-                            <i class="uil uil-cloud services__icon"></i>
-                            <h3 class="services__title">Serveur de <br> Cloud</h3>
-                        </div>
 
-                        <a href="#services" onclick="modal(6)" class="button button--flex button--small button--link services__button">
-                            En savoir plus
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                    </div>
                 </div>
             </section>
 
@@ -747,7 +648,7 @@
                 <div class="footer_container container grid">
                     <div>
                         <h1 class="footer__title">Clément Trempé</h1>
-                        <span class="footer__subtitle">Développeur</span>
+                        <span class="footer__subtitle">DevOps</span>
                     </div>
 
                     <ul class="footer__links">
