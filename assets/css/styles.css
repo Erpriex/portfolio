@@ -188,7 +188,6 @@ img{
 .img__icon{
     width: 30px;
     clip-path:ellipse(50% 50%);
-    margin-top: 5px;
 }
 
 .nav__logo,
@@ -1045,7 +1044,7 @@ button.contact--btn{
         column-gap: 5rem;
     }
     .about__img{
-        width: 350px;
+        width: 250px;
     }
     .about__description{
         text-align: initial;
