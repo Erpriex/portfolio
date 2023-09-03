@@ -32,7 +32,7 @@
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="#"><img src="assets/img/about.png" alt="" class="img__icon"></a>
+                <a href="#"><img src="assets/img/header.png" alt="" class="img__icon"></a>
                 <a href="#" class="nav__logo">Clément Trempé</a>
 
                 <div class="nav__menu" id="nav-menu">
@@ -229,6 +229,13 @@
                                         <span class="skills__number"></span>
                                     </div>
                                 </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">WordPress (développement de thèmes)</h3>
+                                        <span class="skills__number"></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -344,7 +351,7 @@
 
                             <div class="qualification__data">
                                 <div>
-                                    <h3 class="qualification__title">Développeur Web et Mobile</h3>
+                                    <h3 class="qualification__title">Développeur Full Stack</h3>
                                     <span class="qualification__subtitle">F-451/Gleeph</span>
                                     <div class="qualification__calendar">
                                         <i class="uil uil-calendar-alt"></i>
@@ -400,11 +407,11 @@
 
                             <div class="qualification__data">
                                 <div>
-                                    <h3 class="qualification__title">Licence pro Développeur Full Stack</h3>
-                                    <span class="qualification__subtitle">Université - La Rochelle</span>
+                                    <h3 class="qualification__title">Master of Business Administration : Développeur Full Stack</h3>
+                                    <span class="qualification__subtitle">ESPL - Angers</span>
                                     <div class="qualification__calendar">
                                         <i class="uil uil-calendar-alt"></i>
-                                        2022 - 2023
+                                        2023 - 2025
                                     </div>
                                 </div>
 
@@ -413,7 +420,6 @@
                                     <span class="qualification__line"></span>
                                 </div>
                             </div>
-
 
                             <div class="qualification__data">
                                 <div></div>
@@ -422,6 +428,18 @@
                                     <span class="qualification__line"></span>
                                 </div>
                                 <div>
+                                    <h3 class="qualification__title">Licence pro Développeur Full Stack</h3>
+                                    <span class="qualification__subtitle">Université - La Rochelle</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2022 - 2023
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="qualification__data">
+                                <div>
                                     <h3 class="qualification__title">BTS Services Informatiques aux Organisations</h3>
                                     <span class="qualification__subtitle">Lycée Chevrollier - Angers</span>
                                     <div class="qualification__calendar">
@@ -429,20 +447,25 @@
                                         2020 - 2022
                                     </div>
                                 </div>
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
                             </div>
 
                             <div class="qualification__data">
+                                <div></div>
                                 <div>
-                                    <h3 class="qualification__title">BAC STI2D Systèmes d'Informations et Numérique</h3>
+                                    <span class="qualification__rounder"></span>
+                                    <!-- <span class="qualification__line"></span> -->
+                                </div>
+                                <div>
+                                    <h3 class="qualification__title">Bac STI, Electronique, Systèmes d'Informations et Numérique</h3>
                                     <span class="qualification__subtitle">Lycée Vaucanson - Grenoble</span>
                                     <div class="qualification__calendar">
                                         <i class="uil uil-calendar-alt"></i>
                                         2017 - 2020
                                     </div>
-                                </div>
-                                <div>
-                                    <span class="qualification__rounder"></span>
-                                    <!-- <span class="qualification__line"></span> -->
                                 </div>
                             </div>
                         </div>
@@ -498,13 +521,26 @@
                             </div>
                         </div>
 
-                        <!--==================== Hangman ====================-->
+                        <!--==================== SpaceEat ====================-->
                         <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/img/hangman.gif" alt="Hangman" class="portfolio__img">
+                            <img src="assets/img/spaceeat.png" alt="SpaceEat" class="portfolio__img">
                             <div class="portfolio__data">
-                                <h3 class="portfolio__title">Hangman</h3>
-                                <p class="portfolio__description">Jeu du Pendu avec classement des meilleurs scores, 3 niveaux de difficultés, et configuration des mots du jeu.</p>
+                                <h3 class="portfolio__title">SpaceEat</h3>
+                                <p class="portfolio__description">Plateforme de livraison de plats cuisinés à domicile</p>
                                 <a href="#projets" onclick="modal(3)" class="button button--flex button--small portfolio__button">
+                                    En savoir plus
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--==================== SailSea ====================-->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/sailsea.png" alt="SailSea" class="portfolio__img">
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">SailSea</h3>
+                                <p class="portfolio__description">Plateforme e-commerce d'équipements pour bateaux</p>
+                                <a href="#projets" onclick="modal(4)" class="button button--flex button--small portfolio__button">
                                     En savoir plus
                                     <i class="uil uil-arrow-right button__icon"></i>
                                 </a>
@@ -586,16 +622,24 @@
 
                     <div class="portfolio__modal">
                         <div class="portfolio__modal-content">
-                            <h4 class="portfolio__modal-title">Hangman</h4>
+                            <h4 class="portfolio__modal-title">SpaceEat</h4>
                             <i class="uil uil-times portfolio__modal-close"></i>
                             <div class="portfolio__modal-portfolio grid">
-                                <p>Jeu du Pendu réalisée en Python avec choix de la difficulté, classement des meilleurs scores, et gestion des mots du jeu.</p>
-                                <p>L'ensemble des données sont enregistrées dans un fichier JSON.</p>
-                                <p><br>Langage : Python<br></p>
-                                <a class="portfolio__modal-link" href="https://github.com/Erpriex/Hangman" target="_blank">
-                                    Voir le GitHub
-                                    <i class="uil uil-arrow-right portfolio__modal-linkicon"></i>
-                                </a>
+                                <p>Plateforme de livraison de plats cuisinés à domicile</p>
+                                <p>La webapp est utilisable avec un compte utilisateur et/ou un compte livreur</p>
+                                <p><br>Technologies : Symfony, Docker<br></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__modal">
+                        <div class="portfolio__modal-content">
+                            <h4 class="portfolio__modal-title">SailSea</h4>
+                            <i class="uil uil-times portfolio__modal-close"></i>
+                            <div class="portfolio__modal-portfolio grid">
+                                <p>Plateforme e-commerce d'équipements pour bateaux</p>
+                                <p>L'utilisateur peut visualiser en direct la modification de son navire en fonction des articles qu'il ajoute dans son panier via une reproduction visuelle</p>
+                                <p><br>Technologies : Angular, Strapi<br></p>
                             </div>
                         </div>
                     </div>
