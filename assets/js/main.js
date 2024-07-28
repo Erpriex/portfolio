@@ -157,6 +157,11 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-mo
 if (selectedTheme) {
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
     themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+} else {
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    localStorage.setItem('selected-theme', 'dark')
+    localStorage.setItem('selected-icon', 'uil-moon')
 }
 
 themeButton.addEventListener('click', () => {
