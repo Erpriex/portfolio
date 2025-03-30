@@ -1,0 +1,31 @@
+@import "../mixins";
+
+.container {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.mainSection {
+  margin-top: 215px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.mainTitle {
+  color: #FFF;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 126.664%;
+  letter-spacing: 1px;
+}
+
+.mainSubtitle {
+  margin-top: 20px;
+  color: #FFF;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.34px;
+}
