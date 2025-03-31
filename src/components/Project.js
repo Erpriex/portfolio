@@ -3,8 +3,8 @@ import styles from '../styles/components/Project.module.scss';
 const Project = ({company, title}) => {
     return (
         <article>
-            <p>{company}</p>
-            <h2>{title}</h2>
+            <p className={styles.company}>{company}</p>
+            <h2 className={styles.title}>{title}</h2>
         </article>
     )
 }
