@@ -3,6 +3,10 @@
 .container {
   padding-left: 15%;
   padding-right: 15%;
+  @include for-small-desktop-only {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 .mainSection {
@@ -10,6 +14,11 @@
   display: flex;
   align-items: center;
   gap: 50px;
+  @include for-phone-only {
+    flex-direction: column;
+    margin-top: 100px;
+    align-items: flex-start;
+  }
 }
 
 .mainTitle {
@@ -19,6 +28,12 @@
   font-weight: 400;
   line-height: 126.664%;
   letter-spacing: 1px;
+  @include for-tablet-only {
+    font-size: 40px;
+  }
+  @include for-phone-only {
+    font-size: 30px;
+  }
 }
 
 .mainSubtitle {
@@ -27,5 +42,53 @@
   font-family: "Preahvihear", sans-serif;
   font-size: 17px;
   font-weight: 400;
+  line-height: 150%;
   letter-spacing: 0.34px;
+  @include for-tablet-only {
+    font-size: 15px;
+  }
+  @include for-phone-only {
+    font-size: 13px;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appear {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.appear--delay-1 {
+  animation-delay: 0.2s;
+}
+
+.appear--delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0.0deg); }
+  10% { transform: rotate(14.0deg); }
+  20% { transform: rotate(-8.0deg); }
+  30% { transform: rotate(14.0deg); }
+  40% { transform: rotate(-4.0deg); }
+  50% { transform: rotate(10.0deg); }
+  60% { transform: rotate(0.0deg); }
+  100% { transform: rotate(0.0deg); }
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 1.2s ease-out 1s 1 forwards;
 }
