@@ -20,7 +20,7 @@ const HomePage = () => {
                 </section>
             </main>
             <aside className={styles.projectsSection}>
-                <Project company="ESPL" title="RIFRAICH" />
+                <Project company="ESPL" title="RIFRAICH" description="RIFRAICH est une marketplace dédiée aux friperies locales, qui rassemble une sélection de vêtements vintage et de seconde main. La plateforme met en valeur les boutiques indépendantes en leur offrant une vitrine en ligne commune, alliant mode responsable, économie circulaire et commerce de proximité." />
             </aside>
         </section>
     );

@@ -14,3 +14,29 @@
   font-weight: 600;
   letter-spacing: 0.68px;
 }
+
+.descriptionContainer {
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 35px;
+  padding-right: 45px;
+  border-radius: 14px;
+  background: radial-gradient(
+    151.92% 127.02% at 15.32% 21.04%,
+    rgba(105, 59, 147, 0.20) 0%,
+    rgba(110, 191, 244, 0.04) 77.08%,
+    rgba(70, 144, 212, 0.00) 100%
+  );
+  background-blend-mode: normal;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+
+.description {
+  color: #CCD6F6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
