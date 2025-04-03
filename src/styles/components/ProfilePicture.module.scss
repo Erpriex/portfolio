@@ -10,13 +10,7 @@
   width: 258px;
   height: 259px;
   border-radius: 50%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.05) 85%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #FFF 17.71%, rgba(67, 67, 67, 0.00) 100%);
   z-index: 0;
   filter: blur(4px);
   animation: pulse 3s ease-in-out infinite;
@@ -27,13 +21,7 @@
   width: 385px;
   height: 431px;
   border-radius: 50%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(118, 60, 172, 0.35) 0%,
-    rgba(118, 60, 172, 0.15) 45%,
-    rgba(118, 60, 172, 0.05) 85%,
-    rgba(118, 60, 172, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #763CAC 0%, rgba(50, 15, 133, 0.00) 100%);
   z-index: 1;
   filter: blur(4px);
   animation: pulse 4s ease-in-out infinite;

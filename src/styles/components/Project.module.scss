@@ -1,3 +1,15 @@
+@import "../mixins";
+
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.textContainer {
+  z-index: 2;
+}
+
 .company {
   color: #9857D3;
   font-family: 'Poppins', sans-serif;
@@ -17,10 +29,7 @@
 
 .descriptionContainer {
   margin-top: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 35px;
-  padding-right: 45px;
+  padding: 30px 45px 30px 35px;
   border-radius: 14px;
   background: radial-gradient(
     151.92% 127.02% at 15.32% 21.04%,
@@ -31,6 +40,11 @@
   background-blend-mode: normal;
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
+  margin-right: -60px;
+  @include for-small-desktop-only {
+    padding: 20px 30px 20px 20px;
+    margin-right: -40px;
+  }
 }
 
 .description {
@@ -39,4 +53,82 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 150%;
+  @include for-small-desktop-only {
+    font-size: 16px;
+  }
+}
+
+.linksContainer {
+  margin-top: 30px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gradientWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gradientCircle {
+  position: absolute;
+  width: 642px;
+  height: 720px;
+  border-radius: 50%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #763CAC 0%,
+    rgba(50, 15, 133, 0) 100%
+  );
+  top: -150px;
+  right: 100px;
+  animation: rotate 5s linear infinite;
+}
+
+.gradientCircleRight {
+  right: -150px;
+}
+
+.imgContainer {
+  position: relative;
+  background-color: #2B0B3A;
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  width: 550px;
+  height: 309px;
+  flex-shrink: 0;
+  padding-left: 30px;
+  padding-top: 20px;
+  @include for-small-desktop-only {
+    width: 350px;
+    height: 197px;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

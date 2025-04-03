@@ -2,6 +2,7 @@ import styles from '../styles/pages/Home.module.scss';
 import ProfilePicture from "../components/ProfilePicture";
 import Project from "../components/Project";
 import WaveEmoji from "../components/WaveEmoji";
+import rifraichImg from '../assets/img/rifraich.png';
 
 const HomePage = () => {
     return (
@@ -20,7 +21,13 @@ const HomePage = () => {
                 </section>
             </main>
             <aside className={styles.projectsSection}>
-                <Project company="ESPL" title="RIFRAICH" description="RIFRAICH est une marketplace dédiée aux friperies locales, qui rassemble une sélection de vêtements vintage et de seconde main. La plateforme met en valeur les boutiques indépendantes en leur offrant une vitrine en ligne commune, alliant mode responsable, économie circulaire et commerce de proximité." />
+                <Project
+                    company="ESPL"
+                    title="RIFRAICH"
+                    description="RIFRAICH est une marketplace dédiée aux friperies locales, qui rassemble une sélection de vêtements vintage et de seconde main. La plateforme met en valeur les boutiques indépendantes en leur offrant une vitrine en ligne commune, alliant mode responsable, économie circulaire et commerce de proximité."
+                    img={rifraichImg}
+                    link="https://rifraich.fr/"
+                />
             </aside>
         </section>
     );
