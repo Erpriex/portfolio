@@ -1,6 +1,6 @@
 import styles from '../styles/components/Project.module.scss';
-import {Link} from "react-router-dom";
-import {ClickIcon} from "../utils/Icons";
+import { Link } from 'react-router-dom';
+import { ClickIcon } from '../utils/Icons';
 
 const Project = ({ company, title, description, img, link }) => {
     return (
@@ -13,7 +13,9 @@ const Project = ({ company, title, description, img, link }) => {
                 </section>
                 {link && (
                     <section className={styles.linksContainer}>
-                        <Link to={link} target="_blank"><ClickIcon /></Link>
+                        <Link to={link} target="_blank">
+                            <ClickIcon />
+                        </Link>
                     </section>
                 )}
             </section>

@@ -4,6 +4,11 @@
   display: flex;
   align-items: center;
   position: relative;
+
+  @include for-tablet-only {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .textContainer {
@@ -25,6 +30,14 @@
   font-size: 34px;
   font-weight: 600;
   letter-spacing: 0.68px;
+
+  @include for-small-desktop-only {
+    font-size: 28px;
+  }
+
+  @include for-tablet-only {
+    font-size: 24px;
+  }
 }
 
 .descriptionContainer {
@@ -45,6 +58,9 @@
     padding: 20px 30px 20px 20px;
     margin-right: -40px;
   }
+  @include for-tablet-only {
+    margin-right: 0px;
+  }
 }
 
 .description {
@@ -55,6 +71,9 @@
   line-height: 150%;
   @include for-small-desktop-only {
     font-size: 16px;
+  }
+  @include for-tablet-only {
+    font-size: 15px;
   }
 }
 
@@ -111,6 +130,12 @@
     height: 197px;
     padding-left: 20px;
     padding-top: 10px;
+  }
+  @include for-tablet-only {
+    width: 100%;
+    height: auto;
+    padding-left: 0px;
+    padding-top: 0px;
   }
 }
 
