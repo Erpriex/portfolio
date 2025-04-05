@@ -1,8 +1,12 @@
 import styles from '../styles/components/Project.module.scss';
 import { Link } from 'react-router-dom';
 import { ClickIcon } from '../utils/Icons';
+import useIsTablet from "../hooks/useIsTablet";
 
 const Project = ({ company, title, description, img, link }) => {
+
+    const isTablet = useIsTablet();
+
     return (
         <article className={styles.container}>
             <section className={styles.textContainer}>
@@ -11,7 +15,7 @@ const Project = ({ company, title, description, img, link }) => {
                 <section className={styles.descriptionContainer}>
                     <p className={styles.description}>{description}</p>
                 </section>
-                {link && (
+                {!isTablet && link && (
                     <section className={styles.linksContainer}>
                         <Link to={link} target="_blank">
                             <ClickIcon />
@@ -28,6 +32,14 @@ const Project = ({ company, title, description, img, link }) => {
             <section className={styles.imgContainer}>
                 <img className={styles.img} src={img} alt={title} />
             </section>
+
+            {isTablet && link && (
+                <section className={styles.linksContainer}>
+                    <Link to={link} target="_blank">
+                        <ClickIcon />
+                    </Link>
+                </section>
+            )}
         </article>
     );
 };
