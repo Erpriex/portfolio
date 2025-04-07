@@ -113,6 +113,14 @@
   top: -150px;
   right: 100px;
   animation: rotate 5s linear infinite;
+  @include for-tablet-only {
+    top: 0px;
+  }
+  @include for-phone-only {
+    top: 100px;
+    width: 400px;
+    height: 450px;
+  }
 }
 
 .gradientCircleRight {
