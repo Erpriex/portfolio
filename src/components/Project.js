@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import { ClickIcon } from '../utils/Icons';
 import useIsTablet from "../hooks/useIsTablet";
 
-const Project = ({ company, title, description, img, link }) => {
+const Project = ({ company, title, description, img, link, reverse = false }) => {
 
     const isTablet = useIsTablet();
 
     return (
-        <article className={styles.container}>
+        <article className={`${styles.container} ${reverse ? styles.containerReverse : ''}`}>
             <section className={styles.textContainer}>
-                <p className={styles.company}>{company}</p>
-                <h2 className={styles.title}>{title}</h2>
+                <section className={`${reverse ? styles.headerReverse : ''}`}>
+                    <p className={styles.company}>{company}</p>
+                    <h2 className={styles.title}>{title}</h2>
+                </section>
                 <section className={styles.descriptionContainer}>
                     <p className={styles.description}>{description}</p>
                 </section>

@@ -28,6 +28,14 @@ const HomePage = () => {
                     img={rifraichImg}
                     link="https://rifraich.fr/"
                 />
+                <Project
+                    company="ESPL"
+                    title="RIFRAICH"
+                    description="RIFRAICH est une marketplace dédiée aux friperies locales, qui rassemble une sélection de vêtements vintage et de seconde main. La plateforme met en valeur les boutiques indépendantes en leur offrant une vitrine en ligne commune, alliant mode responsable, économie circulaire et commerce de proximité."
+                    img={rifraichImg}
+                    link="https://rifraich.fr/"
+                    reverse
+                />
             </aside>
         </section>
     );

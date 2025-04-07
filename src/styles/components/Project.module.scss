@@ -11,8 +11,19 @@
   }
 }
 
+.containerReverse {
+  flex-direction: row-reverse;
+  @include for-tablet-only {
+    flex-direction: column;
+  }
+}
+
 .textContainer {
   z-index: 2;
+}
+
+.headerReverse {
+  text-align: right;
 }
 
 .company {

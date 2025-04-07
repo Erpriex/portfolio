@@ -54,6 +54,9 @@
 
 .projectsSection {
   margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 180px;
   @include for-phone-only {
     margin-top: 100px;
   }
