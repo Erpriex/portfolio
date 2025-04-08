@@ -75,6 +75,19 @@
   }
 }
 
+.descriptionContainerReverse {
+  margin-left: -60px;
+  margin-right: 0px;
+  @include for-small-desktop-only {
+    margin-left: -40px;
+    margin-right: 0px;
+  }
+  @include for-tablet-only {
+    margin-left: 0px;
+    margin-right: -20px;
+  }
+}
+
 .description {
   color: #CCD6F6;
   font-family: 'Poppins', sans-serif;
@@ -162,6 +175,14 @@
     padding-top: 0px;
     margin-top: -20px;
     margin-left: 10px;
+  }
+}
+
+.imgContainerReverse {
+  padding-right: 30px;
+  padding-left: 0px;
+  @include for-small-desktop-only {
+    padding-right: 20px;
   }
 }
 

@@ -14,7 +14,7 @@ const Project = ({ company, title, description, img, link, reverse = false }) =>
                     <p className={styles.company}>{company}</p>
                     <h2 className={styles.title}>{title}</h2>
                 </section>
-                <section className={styles.descriptionContainer}>
+                <section className={`${styles.descriptionContainer} ${reverse ? styles.descriptionContainerReverse : ''}`}>
                     <p className={styles.description}>{description}</p>
                 </section>
                 {!isTablet && link && (
@@ -31,7 +31,7 @@ const Project = ({ company, title, description, img, link, reverse = false }) =>
                 <div className={`${styles.gradientCircle} ${styles.gradientCircleRight}`}></div>
             </div>
 
-            <section className={styles.imgContainer}>
+            <section className={`${styles.imgContainer} ${reverse ? styles.imgContainerReverse : ''}`}>
                 <img className={styles.img} src={img} alt={title} />
             </section>
 
