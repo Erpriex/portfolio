@@ -109,9 +109,12 @@
   align-items: center;
   gap: 20px;
   @include for-tablet-only {
-    margin-left: -20px;
-    padding-left: 10px;
+    margin-left: auto;
   }
+}
+
+.linksContainerReverse {
+  justify-content: flex-end;
 }
 
 .gradientWrapper {
@@ -134,17 +137,32 @@
     #763CAC 0%,
     rgba(50, 15, 133, 0) 100%
   );
-  top: -150px;
+  top: -170px;
   right: 100px;
   animation: rotate 5s linear infinite;
+  @include for-small-desktop-only {
+    top: -100px;
+    width: 450px;
+    height: 500px;
+  }
   @include for-tablet-only {
-    top: 0px;
+    top: 100px;
+    width: 642px;
+    height: 720px;
   }
   @include for-phone-only {
-    top: 100px;
+    top: 150px;
     width: 400px;
     height: 450px;
   }
+}
+
+.gradientCircleReverse {
+  left: -150px;
+}
+
+.gradientCircleRightReverse {
+  left: 100px;
 }
 
 .gradientCircleRight {
@@ -183,6 +201,11 @@
   padding-left: 0px;
   @include for-small-desktop-only {
     padding-right: 20px;
+  }
+  @include for-tablet-only {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: -10px;
   }
 }
 

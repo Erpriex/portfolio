@@ -18,7 +18,7 @@ const Project = ({ company, title, description, img, link, reverse = false }) =>
                     <p className={styles.description}>{description}</p>
                 </section>
                 {!isTablet && link && (
-                    <section className={styles.linksContainer}>
+                    <section className={`${styles.linksContainer} ${reverse ? styles.linksContainerReverse : ''}`}>
                         <Link to={link} target="_blank">
                             <ClickIcon />
                         </Link>
@@ -27,8 +27,12 @@ const Project = ({ company, title, description, img, link, reverse = false }) =>
             </section>
 
             <div className={styles.gradientWrapper}>
-                <div className={styles.gradientCircle}></div>
-                <div className={`${styles.gradientCircle} ${styles.gradientCircleRight}`}></div>
+                <div className={`${styles.gradientCircle} ${reverse ? styles.gradientCircleReverse : ''}`}></div>
+                <div className={`
+              ${styles.gradientCircle} 
+              ${styles.gradientCircleRight} 
+              ${reverse ? `${styles.gradientCircleReverse} ${styles.gradientCircleRightReverse}` : ''}
+            `}></div>
             </div>
 
             <section className={`${styles.imgContainer} ${reverse ? styles.imgContainerReverse : ''}`}>
