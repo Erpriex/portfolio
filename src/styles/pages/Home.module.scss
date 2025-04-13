@@ -3,6 +3,7 @@
 .container {
   padding-left: 15%;
   padding-right: 15%;
+  padding-bottom: 30px;
   @include for-small-desktop-only {
     padding-left: 10%;
     padding-right: 10%;
@@ -22,7 +23,7 @@
 }
 
 .mainTitle {
-  color: #FFF;
+  color: #fff;
   font-family: "Preahvihear", sans-serif;
   font-size: 50px;
   font-weight: 400;
@@ -38,7 +39,7 @@
 
 .mainSubtitle {
   margin-top: 20px;
-  color: #FFF;
+  color: #fff;
   font-family: "Preahvihear", sans-serif;
   font-size: 17px;
   font-weight: 400;
@@ -59,6 +60,103 @@
   gap: 180px;
   @include for-phone-only {
     margin-top: 100px;
+  }
+}
+
+.contactSection {
+  margin-top: 190px;
+}
+
+.contactTitle {
+  color: #fff;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 0.5px;
+}
+
+.contactForm {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactFormInput {
+  background-color: #261046;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  color: #a4a4a4;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.contactFormTextarea {
+  background-color: #261046;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  color: #a4a4a4;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  resize: vertical;
+  min-height: 250px;
+}
+
+.contactFormSubmitButton {
+  background-color: #3b2063;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-left: auto;
+  transition: opacity 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.footer {
+  margin-top: 200px;
+}
+
+.footerText {
+  color: #a4a4a4;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+
+  a {
+    color: #a4a4a4;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

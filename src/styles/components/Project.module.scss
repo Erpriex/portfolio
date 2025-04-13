@@ -4,11 +4,28 @@
   display: flex;
   align-items: center;
   position: relative;
+  /* État initial : caché et décalé vers le bas */
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 
   @include for-tablet-only {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Cette classe est appliquée uniquement sur le premier projet afin de retarder l'animation */
+.firstDelay {
+  transition-delay: 1s;
+}
+
+/* La classe 'appear' sera ajoutée (par le hook d'intersection) quand l'élément est dans le viewport */
+.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .containerReverse {
@@ -27,8 +44,8 @@
 }
 
 .company {
-  color: #9857D3;
-  font-family: 'Poppins', sans-serif;
+  color: #9857d3;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.32px;
@@ -36,16 +53,14 @@
 
 .title {
   margin-top: 5px;
-  color: #CCD6F6;
-  font-family: 'Poppins', sans-serif;
+  color: #ccd6f6;
+  font-family: "Poppins", sans-serif;
   font-size: 34px;
   font-weight: 600;
   letter-spacing: 0.68px;
-
   @include for-small-desktop-only {
     font-size: 28px;
   }
-
   @include for-tablet-only {
     font-size: 24px;
   }
@@ -57,9 +72,9 @@
   border-radius: 14px;
   background: radial-gradient(
     151.92% 127.02% at 15.32% 21.04%,
-    rgba(105, 59, 147, 0.20) 0%,
+    rgba(105, 59, 147, 0.2) 0%,
     rgba(110, 191, 244, 0.04) 77.08%,
-    rgba(70, 144, 212, 0.00) 100%
+    rgba(70, 144, 212, 0) 100%
   );
   background-blend-mode: normal;
   backdrop-filter: blur(40px);
@@ -89,8 +104,8 @@
 }
 
 .description {
-  color: #CCD6F6;
-  font-family: 'Poppins', sans-serif;
+  color: #ccd6f6;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 150%;
@@ -134,7 +149,7 @@
   border-radius: 50%;
   background: radial-gradient(
     50% 50% at 50% 50%,
-    #763CAC 0%,
+    #763cac 0%,
     rgba(50, 15, 133, 0) 100%
   );
   top: -170px;
@@ -159,10 +174,12 @@
 
 .gradientCircleReverse {
   left: -150px;
+  right: auto;
 }
 
 .gradientCircleRightReverse {
   left: 100px;
+  right: auto;
 }
 
 .gradientCircleRight {
@@ -171,7 +188,7 @@
 
 .imgContainer {
   position: relative;
-  background-color: #2B0B3A;
+  background-color: #2b0b3a;
   border-radius: 10px;
   z-index: 1;
   overflow: hidden;
