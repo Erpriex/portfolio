@@ -5,6 +5,8 @@ import WaveEmoji from "../components/WaveEmoji";
 import rifraichImg from "../assets/img/rifraich.png";
 import bookmetrieImg from "../assets/img/bookmetrie.png";
 import gleephImg from "../assets/img/gleeph.jpg";
+import { GitHubIcon, LinkedInIcon } from "../utils/Icons";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -91,6 +93,17 @@ const HomePage = () => {
         </form>
       </section>
       <footer className={styles.footer}>
+        <section className={styles.footerSocials}>
+          <Link to="https://github.com/Erpriex" target="_blank">
+            <GitHubIcon size="60" stroke="#FFF" />
+          </Link>
+          <Link
+            to="https://www.linkedin.com/in/clement-trempe/"
+            target="_blank"
+          >
+            <LinkedInIcon stroke="#FFF" size="50" />
+          </Link>
+        </section>
         <p className={styles.footerText}>
           © Clément 2025. Tous droits réservés.
         </p>
