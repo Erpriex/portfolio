@@ -109,7 +109,11 @@ const HomePage = () => {
         </p>
         <p className={styles.footerText}>
           Design inspiré de{" "}
-          <a href="https://www.figma.com/@ibrahimmemon" target="_blank">
+          <a
+            href="https://www.figma.com/@ibrahimmemon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Ibrahim Memon
           </a>
         </p>
