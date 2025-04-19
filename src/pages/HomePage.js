@@ -55,7 +55,12 @@ const HomePage = () => {
       </aside>
       <section className={styles.contactSection}>
         <h2 className={styles.contactTitle}>Contact</h2>
-        <form className={styles.contactForm}>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          className={styles.contactForm}
+        >
           <input
             className={styles.contactFormInput}
             type="text"

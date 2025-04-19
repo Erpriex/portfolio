@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  /* État initial : caché et décalé vers le bas */
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -15,14 +14,25 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  &:hover {
+    .imgContainer {
+      .img {
+        transform: scale(1.1);
+      }
+    }
+    .imgContainerReverse {
+      .img {
+        transform: scale(1.1);
+      }
+    }
+  }
 }
 
-/* Cette classe est appliquée uniquement sur le premier projet afin de retarder l'animation */
 .firstDelay {
   transition-delay: 1s;
 }
 
-/* La classe 'appear' sera ajoutée (par le hook d'intersection) quand l'élément est dans le viewport */
 .appear {
   opacity: 1;
   transform: translateY(0);
@@ -33,6 +43,10 @@
   @include for-tablet-only {
     flex-direction: column;
   }
+}
+
+.linkCursor {
+  cursor: pointer;
 }
 
 .textContainer {
@@ -80,25 +94,26 @@
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   margin-right: -60px;
+
   @include for-small-desktop-only {
     padding: 20px 30px 20px 20px;
     margin-right: -40px;
   }
   @include for-tablet-only {
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: -20px;
   }
 }
 
 .descriptionContainerReverse {
   margin-left: -60px;
-  margin-right: 0px;
+  margin-right: 0;
   @include for-small-desktop-only {
     margin-left: -40px;
-    margin-right: 0px;
+    margin-right: 0;
   }
   @include for-tablet-only {
-    margin-left: 0px;
+    margin-left: 0;
     margin-right: -20px;
   }
 }
@@ -155,6 +170,7 @@
   top: -170px;
   right: 100px;
   animation: rotate 5s linear infinite;
+
   @include for-small-desktop-only {
     top: -100px;
     width: 450px;
@@ -186,6 +202,11 @@
   right: -150px;
 }
 
+.imgContainer,
+.imgContainerReverse {
+  transition: transform 0.3s ease;
+}
+
 .imgContainer {
   position: relative;
   background-color: #2b0b3a;
@@ -197,6 +218,7 @@
   flex-shrink: 0;
   padding-left: 30px;
   padding-top: 20px;
+
   @include for-small-desktop-only {
     width: 350px;
     height: 197px;
@@ -206,34 +228,48 @@
   @include for-tablet-only {
     width: 100%;
     height: auto;
-    padding-left: 0px;
-    padding-top: 0px;
+    padding-left: 0;
+    padding-top: 0;
     margin-top: -20px;
     margin-left: 10px;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
   }
 }
 
 .imgContainerReverse {
   padding-right: 30px;
-  padding-left: 0px;
+  padding-left: 0;
   @include for-small-desktop-only {
     padding-right: 20px;
   }
   @include for-tablet-only {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 0;
+    padding-left: 0;
     margin-left: -10px;
   }
-}
 
-.img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 2;
+  .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+  }
 }
 
 @keyframes rotate {

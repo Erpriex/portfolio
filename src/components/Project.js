@@ -16,6 +16,10 @@ const Project = ({
   const isTablet = useIsTablet();
   const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
 
+  const handleClick = () => {
+    if (link) window.open(link, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <article
       ref={ref}
@@ -24,7 +28,9 @@ const Project = ({
         ${isVisible ? styles.appear : ""} 
         ${reverse ? styles.containerReverse : ""} 
         ${isFirst ? styles.firstDelay : ""}
+        ${link ? styles.linkCursor : ""}
       `}
+      onClick={handleClick}
     >
       <section className={styles.textContainer}>
         <section className={reverse ? styles.headerReverse : ""}>
@@ -46,9 +52,7 @@ const Project = ({
               ${reverse ? styles.linksContainerReverse : ""}
             `}
           >
-            <Link to={link} target="_blank">
-              <ClickIcon />
-            </Link>
+            <ClickIcon />
           </section>
         )}
       </section>
