@@ -7,8 +7,42 @@ import bookmetrieImg from "../assets/img/bookmetrie.png";
 import gleephImg from "../assets/img/gleeph.jpg";
 import { GitHubIcon, LinkedInIcon } from "../utils/Icons";
 import { Link } from "react-router-dom";
+import { showToast } from "../utils/Toast";
 
 const HomePage = () => {
+  const handleContactForm = async (event) => {
+    event.preventDefault();
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+    };
+
+    try {
+      const response = await fetch("mail.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        showToast("Votre message a été envoyé !");
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+      } else {
+        showToast("Une erreur est survenue", "error");
+      }
+    } catch (error) {
+      showToast("Une erreur est survenue", "error");
+    }
+  };
+
   return (
     <section className={styles.container}>
       <main className={styles.mainSection}>
@@ -57,8 +91,7 @@ const HomePage = () => {
         <h2 className={styles.contactTitle}>Contact</h2>
         <form
           name="contact"
-          method="POST"
-          data-netlify="true"
+          onSubmit={handleContactForm}
           className={styles.contactForm}
         >
           <input
