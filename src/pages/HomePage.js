@@ -8,6 +8,7 @@ import gleephImg from "../assets/img/gleeph.jpg";
 import { GitHubIcon, LinkedInIcon } from "../utils/Icons";
 import { Link } from "react-router-dom";
 import { showToast } from "../utils/Toast";
+import BackToTop from "../components/BackToTop";
 
 const HomePage = () => {
   const handleContactForm = async (event) => {
@@ -157,6 +158,7 @@ const HomePage = () => {
             </a>
           </p>
         </footer>
+        <BackToTop />
       </section>
       <div
         id="toast-container"
