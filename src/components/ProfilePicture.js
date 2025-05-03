@@ -1,7 +1,8 @@
 import styles from "../styles/components/ProfilePicture.module.scss";
 import profileImg from "../assets/img/profile.png";
+import JobCaroussel from "./JobCaroussel";
 
-const ProfilePicture = ({ img }) => {
+const ProfilePicture = () => {
   return (
     <section className={styles.imageWrapper}>
       <section className={styles.whiteGlow}></section>
@@ -11,6 +12,7 @@ const ProfilePicture = ({ img }) => {
         alt="Clément Trempé Développeur"
         className={styles.profileImg}
       />
+      <JobCaroussel />
     </section>
   );
 };

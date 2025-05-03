@@ -1,0 +1,75 @@
+@import "../mixins";
+
+.container {
+  position: absolute;
+  top: -80px;
+  left: 100px;
+  display: flex;
+  z-index: 2;
+  white-space: nowrap;
+
+  @include for-phone-only {
+    top: -90px;
+    left: 60px;
+    white-space: wrap;
+  }
+}
+
+.label {
+  color: #fff;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  margin-top: 25px;
+  text-align: center;
+  line-height: 25px;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  animation: floatLabel 10s ease-in-out infinite;
+
+  @include for-phone-only {
+    margin-top: 15px;
+  }
+}
+
+.img {
+  animation: floatArrow 8s ease-in-out infinite;
+}
+
+.jobLabel {
+  color: #7127ba;
+  cursor: pointer;
+}
+
+@keyframes floatLabel {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(8px, -4px);
+  }
+  50% {
+    transform: translate(0, -8px);
+  }
+  75% {
+    transform: translate(-8px, -4px);
+  }
+}
+
+@keyframes floatArrow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -2px);
+  }
+  50% {
+    transform: translate(0, -5px);
+  }
+  75% {
+    transform: translate(-5px, -2px);
+  }
+}
