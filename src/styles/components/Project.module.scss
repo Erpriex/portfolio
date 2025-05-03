@@ -172,17 +172,17 @@
   animation: rotate 5s linear infinite;
 
   @include for-small-desktop-only {
-    top: -100px;
-    width: 450px;
-    height: 500px;
+    top: -50px;
+    width: 350px;
+    height: 400px;
   }
   @include for-tablet-only {
-    top: 100px;
-    width: 642px;
-    height: 720px;
+    top: 50px;
+    width: 550px;
+    height: 600px;
   }
   @include for-phone-only {
-    top: 150px;
+    top: 80px;
     width: 400px;
     height: 450px;
   }
