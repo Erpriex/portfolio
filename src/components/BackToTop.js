@@ -28,13 +28,13 @@ const BackToTop = () => {
   };
 
   return (
-    <a
+    <button
       className={`${styles.container} ${visible ? styles.visible : ""}`}
       onClick={scrollToTop}
       aria-label="Retour en haut"
     >
       <ArrowUpIcon />
-    </a>
+    </button>
   );
 };
 
