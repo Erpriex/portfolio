@@ -17,6 +17,7 @@ const Project = ({
   const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
 
   const handleClick = () => {
+    console.log("click");
     if (link) window.open(link, "_blank", "noopener,noreferrer");
   };
 
@@ -28,9 +29,9 @@ const Project = ({
         ${isVisible ? styles.appear : ""} 
         ${reverse ? styles.containerReverse : ""} 
         ${isFirst ? styles.firstDelay : ""}
-        ${link ? styles.linkCursor : ""}
+        ${isTablet && link ? styles.linkCursor : ""}
       `}
-      onClick={handleClick}
+      onClick={isTablet ? handleClick : undefined}
     >
       <section className={styles.textContainer}>
         <section className={reverse ? styles.headerReverse : ""}>
@@ -50,7 +51,9 @@ const Project = ({
             className={`
               ${styles.linksContainer} 
               ${reverse ? styles.linksContainerReverse : ""}
+              ${!isTablet && link ? styles.linkCursor : ""}
             `}
+            onClick={handleClick}
           >
             <ClickIcon />
           </section>
@@ -77,7 +80,9 @@ const Project = ({
         className={`
           ${styles.imgContainer} 
           ${reverse ? styles.imgContainerReverse : ""}
+          ${!isTablet && link ? styles.linkCursor : ""}
         `}
+        onClick={handleClick}
       >
         <img className={styles.img} src={img} alt={title} />
       </section>
