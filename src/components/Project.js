@@ -17,7 +17,6 @@ const Project = ({
   const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
 
   const handleClick = () => {
-    console.log("click");
     if (link) window.open(link, "_blank", "noopener,noreferrer");
   };
 
