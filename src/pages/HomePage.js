@@ -11,6 +11,8 @@ import { showToast } from "../utils/Toast";
 import BackToTop from "../components/BackToTop";
 
 const HomePage = () => {
+  const currentDate = new Date();
+
   const handleContactForm = async (event) => {
     event.preventDefault();
     const formData = {
@@ -145,7 +147,7 @@ const HomePage = () => {
             </Link>
           </section>
           <p className={styles.footerText}>
-            © Clément 2025. Tous droits réservés.
+            © Clément {currentDate.getFullYear()}. Tous droits réservés.
           </p>
           <p className={styles.footerText}>
             Design inspiré de{" "}

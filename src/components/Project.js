@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import styles from "../styles/components/Project.module.scss";
 import { Link } from "react-router-dom";
 import { ClickIcon } from "../utils/Icons";
@@ -16,6 +17,14 @@ const Project = ({
   const isTablet = useIsTablet();
   const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
 
+  const [hasAppeared, setHasAppeared] = useState(false);
+
+  useEffect(() => {
+    if (isVisible || isFirst) {
+      setHasAppeared(true);
+    }
+  }, [isVisible, isFirst]);
+
   const handleClick = () => {
     if (link) window.open(link, "_blank", "noopener,noreferrer");
   };
@@ -24,13 +33,13 @@ const Project = ({
     <article
       ref={ref}
       className={`
-        ${styles.container} 
-        ${isVisible ? styles.appear : ""} 
-        ${reverse ? styles.containerReverse : ""} 
+        ${styles.container}
+        ${hasAppeared ? styles.appear : ""}
+        ${reverse ? styles.containerReverse : ""}
         ${isFirst ? styles.firstDelay : ""}
-        ${isTablet && link ? styles.linkCursor : ""}
+        ${link ? styles.linkCursor : ""}
       `}
-      onClick={isTablet ? handleClick : undefined}
+      onClick={!isTablet && link ? handleClick : undefined}
     >
       <section className={styles.textContainer}>
         <section className={reverse ? styles.headerReverse : ""}>
@@ -39,7 +48,7 @@ const Project = ({
         </section>
         <section
           className={`
-            ${styles.descriptionContainer} 
+            ${styles.descriptionContainer}
             ${reverse ? styles.descriptionContainerReverse : ""}
           `}
         >
@@ -48,9 +57,8 @@ const Project = ({
         {!isTablet && link && (
           <section
             className={`
-              ${styles.linksContainer} 
+              ${styles.linksContainer}
               ${reverse ? styles.linksContainerReverse : ""}
-              ${!isTablet && link ? styles.linkCursor : ""}
             `}
             onClick={handleClick}
           >
@@ -62,14 +70,14 @@ const Project = ({
       <div className={styles.gradientWrapper}>
         <div
           className={`
-            ${styles.gradientCircle} 
+            ${styles.gradientCircle}
             ${reverse ? styles.gradientCircleReverse : ""}
           `}
         ></div>
         <div
           className={`
-            ${styles.gradientCircle} 
-            ${styles.gradientCircleRight} 
+            ${styles.gradientCircle}
+            ${styles.gradientCircleRight}
             ${reverse ? `${styles.gradientCircleReverse} ${styles.gradientCircleRightReverse}` : ""}
           `}
         ></div>
@@ -77,18 +85,17 @@ const Project = ({
 
       <section
         className={`
-          ${styles.imgContainer} 
+          ${styles.imgContainer}
           ${reverse ? styles.imgContainerReverse : ""}
-          ${!isTablet && link ? styles.linkCursor : ""}
         `}
-        onClick={handleClick}
+        onClick={!isTablet && link ? handleClick : undefined}
       >
         <img className={styles.img} src={img} alt={title} />
       </section>
 
       {isTablet && link && (
         <section className={styles.linksContainer}>
-          <Link to={link} target="_blank">
+          <Link to={link} target="_blank" rel="noopener noreferrer">
             <ClickIcon />
           </Link>
         </section>
