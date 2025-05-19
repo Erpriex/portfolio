@@ -65,6 +65,28 @@
   }
 }
 
+.recommendationsSection {
+  margin-top: 200px;
+}
+
+.recommendationsTitle {
+  color: #fff;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 0.5px;
+}
+
+.recommendationsContent {
+  margin-top: 70px;
+  display: flex;
+  gap: 20px;
+  @include for-phone-only {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
 .contactSection {
   margin-top: 190px;
 }

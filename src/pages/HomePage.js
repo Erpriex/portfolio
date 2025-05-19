@@ -2,13 +2,15 @@ import styles from "../styles/pages/Home.module.scss";
 import ProfilePicture from "../components/ProfilePicture";
 import Project from "../components/Project";
 import WaveEmoji from "../components/WaveEmoji";
-import rifraichImg from "../assets/img/rifraich.png";
-import bookmetrieImg from "../assets/img/bookmetrie.png";
-import gleephImg from "../assets/img/gleeph.jpg";
 import { GitHubIcon, LinkedInIcon } from "../utils/Icons";
 import { Link } from "react-router-dom";
 import { showToast } from "../utils/Toast";
 import BackToTop from "../components/BackToTop";
+import RecommendationCard from "../components/RecommendationCard";
+import rifraichImg from "../assets/img/rifraich.png";
+import bookmetrieImg from "../assets/img/bookmetrie.png";
+import gleephImg from "../assets/img/gleeph.jpg";
+import glecomteImg from "../assets/img/glecomte.png";
 
 const HomePage = () => {
   const currentDate = new Date();
@@ -91,6 +93,17 @@ const HomePage = () => {
             link="https://gleeph.com/"
           />
         </aside>
+        <section className={styles.recommendationsSection}>
+          <h2 className={styles.recommendationsTitle}>Ils donnent leur avis</h2>
+          <section className={styles.recommendationsContent}>
+            <RecommendationCard
+              img={glecomteImg}
+              name="Guillaume Lecomte"
+              job="Développeur Full Stack"
+              content="Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !"
+            />
+          </section>
+        </section>
         <section className={styles.contactSection}>
           <h2 className={styles.contactTitle}>Contact</h2>
           <form
