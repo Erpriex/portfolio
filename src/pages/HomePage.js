@@ -15,6 +15,16 @@ import glecomteImg from "../assets/img/glecomte.png";
 const HomePage = () => {
   const currentDate = new Date();
 
+  const recommendations = [
+    {
+      img: glecomteImg,
+      name: "Guillaume Lecomte",
+      job: "Développeur Full Stack",
+      content:
+        "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
+    },
+  ];
+
   const handleContactForm = async (event) => {
     event.preventDefault();
     const formData = {
@@ -94,14 +104,17 @@ const HomePage = () => {
           />
         </aside>
         <section className={styles.recommendationsSection}>
-          <h2 className={styles.recommendationsTitle}>Ils donnent leur avis</h2>
+          <h2 className={styles.recommendationsTitle}>Avis</h2>
           <section className={styles.recommendationsContent}>
-            <RecommendationCard
-              img={glecomteImg}
-              name="Guillaume Lecomte"
-              job="Développeur Full Stack"
-              content="Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !"
-            />
+            {recommendations.map((rec, i) => (
+              <RecommendationCard
+                key={i}
+                img={rec.img}
+                name={rec.name}
+                job={rec.job}
+                content={rec.content}
+              />
+            ))}
           </section>
         </section>
         <section className={styles.contactSection}>
