@@ -74,7 +74,8 @@ const HomePage = () => {
             <p
               className={`${styles.mainSubtitle} ${styles.appear} ${styles["appear--delay-2"]}`}
             >
-              Développement 💻 | DevOps 🚀 | Gestion de projet 🌍
+              Développement 💻 | DevOps 🚀 | Gestion de projet 🌍 |
+              Collaboration en équipe 🤝
             </p>
           </section>
         </main>
