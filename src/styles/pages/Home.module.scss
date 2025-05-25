@@ -69,12 +69,18 @@
   }
   @include for-phone-only {
     margin-top: 100px;
-    gap: 120px;
+    gap: 80px;
   }
 }
 
 .recommendationsSection {
   margin-top: 200px;
+  @include for-tablet-only {
+    margin-top: 150px;
+  }
+  @include for-phone-only {
+    margin-top: 100px;
+  }
 }
 
 .recommendationsTitle {
@@ -97,6 +103,12 @@
 
 .contactSection {
   margin-top: 190px;
+  @include for-tablet-only {
+    margin-top: 150px;
+  }
+  @include for-phone-only {
+    margin-top: 100px;
+  }
 }
 
 .contactTitle {
@@ -153,8 +165,8 @@
   font-weight: 600;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-left: auto;
   transition: opacity 0.2s ease;
 
