@@ -38,8 +38,18 @@
 }
 
 .jobLabel {
-  color: #7127ba;
+  color: #9857d3;
   cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.entering {
+  animation: jobEnter 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.leaving {
+  animation: jobLeave 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @keyframes floatLabel {
@@ -71,5 +81,27 @@
   }
   75% {
     transform: translate(-5px, -2px);
+  }
+}
+
+@keyframes jobEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jobLeave {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
   }
 }
