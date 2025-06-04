@@ -32,7 +32,7 @@ const JobCaroussel = () => {
     }
     intervalRef.current = setInterval(() => {
       handleJobChange();
-    }, 6000);
+    }, 3000);
   }, [handleJobChange]);
 
   const handleClick = useCallback(() => {
