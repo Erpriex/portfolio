@@ -11,6 +11,7 @@ import rifraichImg from "../assets/img/rifraich.png";
 import bookmetrieImg from "../assets/img/bookmetrie.png";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
+import aglacialImg from "../assets/img/aglacial.png";
 
 const HomePage = () => {
   const currentDate = new Date();
@@ -22,6 +23,13 @@ const HomePage = () => {
       job: "Développeur Full Stack",
       content:
         "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
+    },
+    {
+      img: aglacialImg,
+      name: "Alban Glacial",
+      job: "Ingénieur Systèmes et Réseaux",
+      content:
+        "Clément est un développeur web talentueux et rigoureux. Il se distingue également par une grande intelligence relationnelle : toujours à l’écoute, bienveillant et excellent en travail d’équipe !",
     },
   ];
 
@@ -105,7 +113,7 @@ const HomePage = () => {
           />
         </aside>
         <section className={styles.recommendationsSection}>
-          <h2 className={styles.recommendationsTitle}>Avis</h2>
+          <h2 className={styles.recommendationsTitle}>Ils donnent leur avis</h2>
           <section className={styles.recommendationsContent}>
             {recommendations.map((rec, i) => (
               <RecommendationCard

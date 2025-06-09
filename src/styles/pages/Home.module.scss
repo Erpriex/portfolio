@@ -97,7 +97,9 @@
   gap: 20px;
   @include for-phone-only {
     flex-direction: column;
-    gap: 0px;
+  }
+  > * {
+    flex: 1;
   }
 }
 
