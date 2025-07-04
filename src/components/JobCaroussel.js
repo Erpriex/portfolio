@@ -8,10 +8,13 @@ const JobCaroussel = () => {
     "Frontend",
     "Backend",
     "Mobile",
+    "DevOps",
     "React",
+    "SpringBoot",
     "Node.js",
     "Java",
-    "DevOps",
+    "JavaScript",
+    "React Native",
   ];
 
   const [currentJob, setCurrentJob] = useState(0);
