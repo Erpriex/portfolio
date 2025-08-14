@@ -8,7 +8,7 @@ import { showToast } from "../utils/Toast";
 import BackToTop from "../components/BackToTop";
 import RecommendationCard from "../components/RecommendationCard";
 import rifraichImg from "../assets/img/rifraich.png";
-import bookmetrieImg from "../assets/img/bookmetrie.png";
+import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
 import aglacialImg from "../assets/img/aglacial.png";
