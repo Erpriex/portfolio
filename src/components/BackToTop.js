@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/components/BackToTop.module.scss";
 import { ArrowUpIcon } from "../utils/Icons";
+import LiquidGlassButton from "./LiquidGlassButton";
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -25,16 +26,17 @@ const BackToTop = () => {
   const scrollToTop = (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.activeElement.blur();
   };
 
   return (
-    <button
+    <LiquidGlassButton
       className={`${styles.container} ${visible ? styles.visible : ""}`}
       onClick={scrollToTop}
       aria-label="Retour en haut"
     >
       <ArrowUpIcon />
-    </button>
+    </LiquidGlassButton>
   );
 };
 

@@ -12,6 +12,7 @@ import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
 import aglacialImg from "../assets/img/aglacial.png";
+import LiquidGlassButton from "../components/LiquidGlassButton";
 
 const HomePage = () => {
   const currentDate = new Date();
@@ -164,9 +165,12 @@ const HomePage = () => {
               placeholder="Votre message"
               required
             />
-            <button className={styles.contactFormSubmitButton} type="submit">
+            <LiquidGlassButton
+              className={styles.contactFormSubmitButton}
+              type="submit"
+            >
               Envoyer
-            </button>
+            </LiquidGlassButton>
           </form>
         </section>
         <footer className={styles.footer}>
