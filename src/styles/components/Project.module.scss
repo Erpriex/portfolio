@@ -10,29 +10,31 @@
     opacity 0.8s ease-out,
     transform 0.8s ease-out;
 
+  @include for-desktop-only {
+    &:hover {
+      .descriptionContainer {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow:
+          0 12px 48px 0 rgba(31, 38, 135, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      }
+      .imgContainer {
+        .img {
+          transform: scale(1.1);
+        }
+      }
+      .imgContainerReverse {
+        .img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
   @include for-tablet-only {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  &:hover {
-    .descriptionContainer {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow:
-        0 12px 48px 0 rgba(31, 38, 135, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    }
-    .imgContainer {
-      .img {
-        transform: scale(1.1);
-      }
-    }
-    .imgContainerReverse {
-      .img {
-        transform: scale(1.1);
-      }
-    }
   }
 }
 

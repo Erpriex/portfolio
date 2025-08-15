@@ -133,7 +133,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  
+
   border-radius: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -142,16 +142,16 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  
-  box-shadow: 
+
+  box-shadow:
     0 4px 16px 0 rgba(31, 38, 135, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
+
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -164,24 +164,24 @@
       transparent
     );
   }
-  
+
   transition: all 0.3s ease;
-  
+
   &:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(152, 87, 211, 0.4);
-    box-shadow: 
+    box-shadow:
       0 8px 24px 0 rgba(31, 38, 135, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
       0 0 0 3px rgba(152, 87, 211, 0.1);
     color: #fff;
   }
-  
+
   &::placeholder {
     color: rgba(164, 164, 164, 0.6);
   }
-  
+
   &:focus::placeholder {
     color: rgba(204, 214, 246, 0.4);
   }
@@ -192,7 +192,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  
+
   border-radius: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -203,16 +203,16 @@
   font-weight: 500;
   resize: vertical;
   min-height: 250px;
-  
-  box-shadow: 
+
+  box-shadow:
     0 4px 16px 0 rgba(31, 38, 135, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
+
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -225,24 +225,24 @@
       transparent
     );
   }
-  
+
   transition: all 0.3s ease;
-  
+
   &:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(152, 87, 211, 0.4);
-    box-shadow: 
+    box-shadow:
       0 8px 24px 0 rgba(31, 38, 135, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
       0 0 0 3px rgba(152, 87, 211, 0.1);
     color: #fff;
   }
-  
+
   &::placeholder {
     color: rgba(164, 164, 164, 0.6);
   }
-  
+
   &:focus::placeholder {
     color: rgba(204, 214, 246, 0.4);
   }
@@ -253,7 +253,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  
+
   border-radius: 16px;
   cursor: pointer;
   color: #ccd6f6;
@@ -266,15 +266,15 @@
   padding-right: 50px;
   margin-left: auto;
 
-  box-shadow: 
+  box-shadow:
     0 4px 16px 0 rgba(31, 38, 135, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
   position: relative;
   overflow: hidden;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -294,7 +294,7 @@
     outline: none;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(152, 87, 211, 0.4);
-    box-shadow: 
+    box-shadow:
       0 8px 24px 0 rgba(31, 38, 135, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
       0 0 0 3px rgba(152, 87, 211, 0.1);
@@ -304,7 +304,7 @@
   &:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(152, 87, 211, 0.3);
-    box-shadow: 
+    box-shadow:
       0 8px 24px 0 rgba(31, 38, 135, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
     color: #fff;
@@ -315,7 +315,7 @@
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(152, 87, 211, 0.4);
     transform: translateY(0);
-    box-shadow: 
+    box-shadow:
       0 4px 16px 0 rgba(31, 38, 135, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
     color: #fff;
