@@ -4,11 +4,13 @@
   display: flex;
   align-items: center;
   position: relative;
+
   opacity: 0;
   transform: translateY(20px);
   transition:
     opacity 0.8s ease-out,
     transform 0.8s ease-out;
+  will-change: opacity, transform;
 
   @include for-desktop-only {
     &:hover {
@@ -94,14 +96,17 @@
   padding: 30px 45px 30px 35px;
   border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px) saturate(1.8);
-  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  isolation: isolate;
+  transform: translateZ(0);
+  will-change: backdrop-filter, box-shadow, background, border-color;
 
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0) saturate(1);
+  -webkit-backdrop-filter: blur(0) saturate(1);
   box-shadow:
-    0 8px 32px 0 rgba(31, 38, 135, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 8px 32px 0 rgba(31, 38, 135, 0),
+    inset 0 1px 0 rgba(255, 255, 255, 0);
 
   position: relative;
   overflow: hidden;
@@ -121,7 +126,12 @@
     );
   }
 
-  transition: all 0.3s ease;
+  transition:
+    background 0.8s ease-out,
+    border-color 0.8s ease-out,
+    box-shadow 0.8s ease-out,
+    backdrop-filter 0.8s ease-out,
+    -webkit-backdrop-filter 0.8s ease-out;
 
   margin-right: -60px;
 
@@ -135,6 +145,16 @@
     margin-left: -20px;
     border-radius: 14px;
   }
+}
+
+.appear .descriptionContainer {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .descriptionContainerReverse {
@@ -310,5 +330,23 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  .descriptionContainer {
+    transition: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
