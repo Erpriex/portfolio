@@ -93,7 +93,7 @@
 
 .descriptionContainer {
   margin-top: 30px;
-  padding: 30px 45px 30px 35px;
+  padding: 30px 55px 30px 35px;
   border-radius: 20px;
 
   isolation: isolate;
@@ -160,7 +160,9 @@
 .descriptionContainerReverse {
   margin-left: -60px;
   margin-right: 0;
+  padding: 30px 35px 30px 65px;
   @include for-small-desktop-only {
+    padding: 20px 20px 20px 45px;
     margin-left: -40px;
     margin-right: 0;
   }
