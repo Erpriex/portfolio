@@ -106,7 +106,7 @@ const HomePage = () => {
           />
         </aside>
         <section className={styles.recommendationsSection}>
-          <h2 className={styles.recommendationsTitle}>Ils donnent leur avis</h2>
+          <h2 className={styles.recommendationsTitle}>Recommandaton</h2>
           <section className={styles.recommendationsContent}>
             {recommendations.map((rec, i) => (
               <RecommendationCard
