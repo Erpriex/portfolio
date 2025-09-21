@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../styles/components/LiquidGlassButton.module.scss";
+import styles from "../styles/components/GlassButton.module.scss";
 
-const LiquidGlassButton = ({
+const GlassButton = ({
   className = "",
   onClick = () => {},
   type = "button",
@@ -20,4 +20,4 @@ const LiquidGlassButton = ({
   );
 };
 
-export default LiquidGlassButton;
+export default GlassButton;

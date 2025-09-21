@@ -11,10 +11,13 @@ import rifraichImg from "../assets/img/rifraich.png";
 import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
-import LiquidGlassButton from "../components/LiquidGlassButton";
+import GlassButton from "../components/GlassButton";
+import GlassSwitch from "../components/GlassSwitch";
+import { useState } from "react";
 
 const HomePage = () => {
   const currentDate = new Date();
+  const [contactMessageTypeAudio, setContactMessageTypeAudio] = useState(true);
 
   const recommendations = [
     {
@@ -25,6 +28,10 @@ const HomePage = () => {
         "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
     },
   ];
+
+  const handleContactMessageTypeChange = (newState) => {
+    setContactMessageTypeAudio(newState);
+  };
 
   const handleContactForm = async (event) => {
     event.preventDefault();
@@ -63,10 +70,10 @@ const HomePage = () => {
     <>
       <section className={styles.container}>
         <main className={styles.mainSection}>
-          <section className={`${styles.appear} ${styles["appear--delay-1"]}`}>
+          <div className={`${styles.appear} ${styles["appear--delay-1"]}`}>
             <ProfilePicture />
-          </section>
-          <section>
+          </div>
+          <div>
             <h1
               className={`${styles.mainTitle} ${styles.appear} ${styles["appear--delay-1"]}`}
             >
@@ -78,7 +85,7 @@ const HomePage = () => {
               Développement 💻 | DevOps 🚀 | Gestion de projet 🌍 |
               Collaboration en équipe 🤝
             </p>
-          </section>
+          </div>
         </main>
         <aside className={styles.projectsSection}>
           <Project
@@ -150,6 +157,15 @@ const HomePage = () => {
               placeholder="Objet"
               required
             />
+            <div className={styles.contactMessageHeader}>
+              <p className={styles.contactMessageHeaderLabel}>
+                Message {contactMessageTypeAudio ? "vocal" : "texte"}
+              </p>
+              <GlassSwitch
+                checked={contactMessageTypeAudio}
+                handleClick={handleContactMessageTypeChange}
+              />
+            </div>
             <textarea
               className={styles.contactFormTextarea}
               id="message"
@@ -157,16 +173,16 @@ const HomePage = () => {
               placeholder="Votre message"
               required
             />
-            <LiquidGlassButton
+            <GlassButton
               className={styles.contactFormSubmitButton}
               type="submit"
             >
               Envoyer
-            </LiquidGlassButton>
+            </GlassButton>
           </form>
         </section>
         <footer className={styles.footer}>
-          <section className={styles.footerSocials}>
+          <div className={styles.footerSocials}>
             <Link to="https://github.com/Erpriex" target="_blank">
               <GitHubIcon size="60" stroke="#FFF" />
             </Link>
@@ -176,7 +192,7 @@ const HomePage = () => {
             >
               <LinkedInIcon stroke="#FFF" size="50" />
             </Link>
-          </section>
+          </div>
           <p className={styles.footerText}>
             © Clément {currentDate.getFullYear()}. Tous droits réservés.
           </p>
