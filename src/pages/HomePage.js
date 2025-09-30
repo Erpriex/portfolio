@@ -14,6 +14,7 @@ import glecomteImg from "../assets/img/glecomte.png";
 import GlassButton from "../components/GlassButton";
 import GlassSwitch from "../components/GlassSwitch";
 import { useState } from "react";
+import VoiceRecordPlayer from "../components/VoiceRecordPlayer";
 
 const HomePage = () => {
   const currentDate = new Date();
@@ -166,13 +167,28 @@ const HomePage = () => {
                 handleClick={handleContactMessageTypeChange}
               />
             </div>
-            <textarea
-              className={styles.contactFormTextarea}
-              id="message"
-              name="message"
-              placeholder="Votre message"
-              required
-            />
+            {contactMessageTypeAudio ? (
+              <div className={styles.contactAudioPlayerContainer}>
+                <div className={styles.contactAudioPlayerLabelContainer}>
+                  <p className={styles.contactAudioPlayerLabel}>
+                    Laissez moi un message audio !
+                  </p>
+                  <p className={styles.contactAudioPlayerLabel}>
+                    Prise de contact, témoignage, ou simple bonjour{" "}
+                    <WaveEmoji />
+                  </p>
+                </div>
+                <VoiceRecordPlayer />
+              </div>
+            ) : (
+              <textarea
+                className={styles.contactFormTextarea}
+                id="message"
+                name="message"
+                placeholder="Votre message"
+                required
+              />
+            )}
             <GlassButton
               className={styles.contactFormSubmitButton}
               type="submit"
