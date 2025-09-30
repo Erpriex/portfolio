@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/components/VoiceRecordPlayer.module.scss";
+import { showToast } from "../utils/Toast";
 
 const VoiceRecordPlayer = ({
   className = "",
@@ -14,9 +15,12 @@ const VoiceRecordPlayer = ({
   const [currentTime, setCurrentTime] = useState(0);
   const [recordingTime, setRecordingTime] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
+  const [audioURL, setAudioURL] = useState(null);
 
   const audioRef = useRef(null);
   const recordingIntervalRef = useRef(null);
+  const mediaRecorderRef = useRef(null);
+  const audioChunksRef = useRef([]);
 
   useEffect(() => {
     if (isRecording) {
@@ -42,20 +46,60 @@ const VoiceRecordPlayer = ({
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
-  const handleRecord = () => {
+  const handleRecord = async () => {
     if (disabled) return;
 
     if (isRecording) {
+      if (
+        mediaRecorderRef.current &&
+        mediaRecorderRef.current.state !== "inactive"
+      ) {
+        mediaRecorderRef.current.stop();
+        mediaRecorderRef.current.stream
+          .getTracks()
+          .forEach((track) => track.stop());
+      }
       setIsRecording(false);
-      setHasRecording(true);
-      onStopRecording();
     } else {
-      setIsRecording(true);
-      setHasRecording(false);
-      setRecordingTime(0);
-      setCurrentTime(0);
-      setIsPlaying(false);
-      onStartRecording();
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+        });
+
+        audioChunksRef.current = [];
+        const mediaRecorder = new MediaRecorder(stream);
+        mediaRecorderRef.current = mediaRecorder;
+
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            audioChunksRef.current.push(event.data);
+          }
+        };
+
+        mediaRecorder.onstop = () => {
+          const audioBlob = new Blob(audioChunksRef.current, {
+            type: "audio/webm",
+          });
+          const url = URL.createObjectURL(audioBlob);
+          setAudioURL(url);
+          setHasRecording(true);
+          onStopRecording(audioBlob);
+        };
+
+        mediaRecorder.start();
+        setIsRecording(true);
+        setHasRecording(false);
+        setRecordingTime(0);
+        setCurrentTime(0);
+        setIsPlaying(false);
+        onStartRecording();
+      } catch (error) {
+        console.error("Erreur d'accès au microphone:", error);
+        showToast(
+          "Impossible d'accéder au microphone. Veuillez vérifier les permissions.",
+          "error",
+        );
+      }
     }
   };
 
@@ -76,14 +120,24 @@ const VoiceRecordPlayer = ({
 
     setIsClosing(true);
 
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    if (audioURL) {
+      URL.revokeObjectURL(audioURL);
+    }
+
     setTimeout(() => {
       setHasRecording(false);
       setIsPlaying(false);
       setCurrentTime(0);
       setRecordingTime(0);
+      setAudioURL(null);
       setIsClosing(false);
       onDelete();
-    }, 800); // Durée totale : 400ms boutons + 400ms container
+    }, 800);
   };
 
   const handleTimeUpdate = () => {
@@ -158,6 +212,7 @@ const VoiceRecordPlayer = ({
       )}
       <audio
         ref={audioRef}
+        src={audioURL}
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
         style={{ display: "none" }}
