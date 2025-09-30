@@ -19,6 +19,7 @@ import VoiceRecordPlayer from "../components/VoiceRecordPlayer";
 const HomePage = () => {
   const currentDate = new Date();
   const [contactMessageTypeAudio, setContactMessageTypeAudio] = useState(true);
+  const [contactMessageAudio, setContactMessageAudio] = useState(null);
 
   const recommendations = [
     {
@@ -178,7 +179,14 @@ const HomePage = () => {
                     <WaveEmoji />
                   </p>
                 </div>
-                <VoiceRecordPlayer />
+                <VoiceRecordPlayer
+                  onRecordingComplete={(audioBlob) => {
+                    setContactMessageAudio(audioBlob);
+                  }}
+                  onDelete={() => {
+                    setContactMessageAudio(null);
+                  }}
+                />
               </div>
             ) : (
               <textarea

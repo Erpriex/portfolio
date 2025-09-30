@@ -4,8 +4,7 @@ import { showToast } from "../utils/Toast";
 
 const VoiceRecordPlayer = ({
   className = "",
-  onStartRecording = () => {},
-  onStopRecording = () => {},
+  onRecordingComplete = () => {},
   onDelete = () => {},
   disabled = false,
 }) => {
@@ -83,7 +82,8 @@ const VoiceRecordPlayer = ({
           const url = URL.createObjectURL(audioBlob);
           setAudioURL(url);
           setHasRecording(true);
-          onStopRecording(audioBlob);
+
+          onRecordingComplete(audioBlob);
         };
 
         mediaRecorder.start();
@@ -92,7 +92,6 @@ const VoiceRecordPlayer = ({
         setRecordingTime(0);
         setCurrentTime(0);
         setIsPlaying(false);
-        onStartRecording();
       } catch (error) {
         console.error("Erreur d'accès au microphone:", error);
         showToast(
