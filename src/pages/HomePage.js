@@ -4,22 +4,16 @@ import Project from "../components/Project";
 import WaveEmoji from "../components/WaveEmoji";
 import { GitHubIcon, LinkedInIcon } from "../utils/Icons";
 import { Link } from "react-router-dom";
-import { showToast } from "../utils/Toast";
 import BackToTop from "../components/BackToTop";
 import RecommendationCard from "../components/RecommendationCard";
 import rifraichImg from "../assets/img/rifraich.png";
 import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
-import GlassButton from "../components/GlassButton";
-import GlassSwitch from "../components/GlassSwitch";
-import { useState } from "react";
-import VoiceRecordPlayer from "../components/VoiceRecordPlayer";
+import ContactForm from "../components/ContactForm";
 
 const HomePage = () => {
   const currentDate = new Date();
-  const [contactMessageTypeAudio, setContactMessageTypeAudio] = useState(true);
-  const [contactMessageAudio, setContactMessageAudio] = useState(null);
 
   const recommendations = [
     {
@@ -30,43 +24,6 @@ const HomePage = () => {
         "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
     },
   ];
-
-  const handleContactMessageTypeChange = (newState) => {
-    setContactMessageTypeAudio(newState);
-  };
-
-  const handleContactForm = async (event) => {
-    event.preventDefault();
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-    };
-
-    try {
-      const response = await fetch("mail.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (response.ok) {
-        showToast("Votre message a été envoyé !");
-
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("subject").value = "";
-        document.getElementById("message").value = "";
-      } else {
-        showToast("Une erreur est survenue", "error");
-      }
-    } catch (error) {
-      showToast("Une erreur est survenue", "error");
-    }
-  };
 
   return (
     <>
@@ -130,80 +87,7 @@ const HomePage = () => {
         </section>
         <section className={styles.contactSection}>
           <h2 className={styles.contactTitle}>Contact</h2>
-          <form
-            name="contact"
-            onSubmit={handleContactForm}
-            className={styles.contactForm}
-          >
-            <input
-              className={styles.contactFormInput}
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Votre nom"
-              required
-            />
-            <input
-              className={styles.contactFormInput}
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Votre email"
-              required
-            />
-            <input
-              className={styles.contactFormInput}
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Objet"
-              required
-            />
-            <div className={styles.contactMessageHeader}>
-              <p className={styles.contactMessageHeaderLabel}>
-                Message {contactMessageTypeAudio ? "vocal" : "texte"}
-              </p>
-              <GlassSwitch
-                checked={contactMessageTypeAudio}
-                handleClick={handleContactMessageTypeChange}
-              />
-            </div>
-            {contactMessageTypeAudio ? (
-              <div className={styles.contactAudioPlayerContainer}>
-                <div className={styles.contactAudioPlayerLabelContainer}>
-                  <p className={styles.contactAudioPlayerLabel}>
-                    Laissez moi un message audio !
-                  </p>
-                  <p className={styles.contactAudioPlayerLabel}>
-                    Prise de contact, témoignage, ou simple bonjour{" "}
-                    <WaveEmoji />
-                  </p>
-                </div>
-                <VoiceRecordPlayer
-                  onRecordingComplete={(audioBlob) => {
-                    setContactMessageAudio(audioBlob);
-                  }}
-                  onDelete={() => {
-                    setContactMessageAudio(null);
-                  }}
-                />
-              </div>
-            ) : (
-              <textarea
-                className={styles.contactFormTextarea}
-                id="message"
-                name="message"
-                placeholder="Votre message"
-                required
-              />
-            )}
-            <GlassButton
-              className={styles.contactFormSubmitButton}
-              type="submit"
-            >
-              Envoyer
-            </GlassButton>
-          </form>
+          <ContactForm />
         </section>
         <footer className={styles.footer}>
           <div className={styles.footerSocials}>
