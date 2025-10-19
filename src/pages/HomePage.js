@@ -4,14 +4,13 @@ import Project from "../components/Project";
 import WaveEmoji from "../components/WaveEmoji";
 import { GitHubIcon, LinkedInIcon } from "../utils/Icons";
 import { Link } from "react-router-dom";
-import { showToast } from "../utils/Toast";
 import BackToTop from "../components/BackToTop";
 import RecommendationCard from "../components/RecommendationCard";
 import rifraichImg from "../assets/img/rifraich.png";
 import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
-import LiquidGlassButton from "../components/LiquidGlassButton";
+import ContactForm from "../components/ContactForm";
 
 const HomePage = () => {
   const currentDate = new Date();
@@ -26,47 +25,14 @@ const HomePage = () => {
     },
   ];
 
-  const handleContactForm = async (event) => {
-    event.preventDefault();
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-    };
-
-    try {
-      const response = await fetch("mail.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (response.ok) {
-        showToast("Votre message a été envoyé !");
-
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("subject").value = "";
-        document.getElementById("message").value = "";
-      } else {
-        showToast("Une erreur est survenue", "error");
-      }
-    } catch (error) {
-      showToast("Une erreur est survenue", "error");
-    }
-  };
-
   return (
     <>
       <section className={styles.container}>
         <main className={styles.mainSection}>
-          <section className={`${styles.appear} ${styles["appear--delay-1"]}`}>
+          <div className={`${styles.appear} ${styles["appear--delay-1"]}`}>
             <ProfilePicture />
-          </section>
-          <section>
+          </div>
+          <div>
             <h1
               className={`${styles.mainTitle} ${styles.appear} ${styles["appear--delay-1"]}`}
             >
@@ -78,7 +44,7 @@ const HomePage = () => {
               Développement 💻 | DevOps 🚀 | Gestion de projet 🌍 |
               Collaboration en équipe 🤝
             </p>
-          </section>
+          </div>
         </main>
         <aside className={styles.projectsSection}>
           <Project
@@ -121,52 +87,10 @@ const HomePage = () => {
         </section>
         <section className={styles.contactSection}>
           <h2 className={styles.contactTitle}>Contact</h2>
-          <form
-            name="contact"
-            onSubmit={handleContactForm}
-            className={styles.contactForm}
-          >
-            <input
-              className={styles.contactFormInput}
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Votre nom"
-              required
-            />
-            <input
-              className={styles.contactFormInput}
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Votre email"
-              required
-            />
-            <input
-              className={styles.contactFormInput}
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Objet"
-              required
-            />
-            <textarea
-              className={styles.contactFormTextarea}
-              id="message"
-              name="message"
-              placeholder="Votre message"
-              required
-            />
-            <LiquidGlassButton
-              className={styles.contactFormSubmitButton}
-              type="submit"
-            >
-              Envoyer
-            </LiquidGlassButton>
-          </form>
+          <ContactForm />
         </section>
         <footer className={styles.footer}>
-          <section className={styles.footerSocials}>
+          <div className={styles.footerSocials}>
             <Link to="https://github.com/Erpriex" target="_blank">
               <GitHubIcon size="60" stroke="#FFF" />
             </Link>
@@ -176,7 +100,7 @@ const HomePage = () => {
             >
               <LinkedInIcon stroke="#FFF" size="50" />
             </Link>
-          </section>
+          </div>
           <p className={styles.footerText}>
             © Clément {currentDate.getFullYear()}. Tous droits réservés.
           </p>
