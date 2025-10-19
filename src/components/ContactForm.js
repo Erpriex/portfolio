@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../styles/components/ContactForm.module.scss";
 import GlassSwitch from "./GlassSwitch";
 import WaveEmoji from "./WaveEmoji";
@@ -9,6 +9,7 @@ import { showToast } from "../utils/Toast";
 const ContactForm = () => {
   const [contactMessageTypeAudio, setContactMessageTypeAudio] = useState(true);
   const [contactMessageAudio, setContactMessageAudio] = useState(null);
+  const resetAudioPlayerRef = useRef(null);
 
   const handleContactMessageTypeChange = (newState) => {
     setContactMessageTypeAudio(newState);
@@ -16,20 +17,31 @@ const ContactForm = () => {
 
   const handleContactForm = async (event) => {
     event.preventDefault();
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-    };
+
+    const fd = new FormData();
+    fd.append("name", document.getElementById("name").value);
+    fd.append("email", document.getElementById("email").value);
+    fd.append("subject", document.getElementById("subject").value);
+
+    if (contactMessageTypeAudio) {
+      if (!contactMessageAudio) {
+        showToast("Enregistre un message vocal avant d’envoyer 🎙️", "error");
+        return;
+      }
+      const filename = `message-${Date.now()}.webm`;
+      const audioFile = new File([contactMessageAudio], filename, {
+        type: contactMessageAudio.type || "audio/webm",
+      });
+      fd.append("audio", audioFile);
+      fd.append("message", "Message vocal en pièce jointe.");
+    } else {
+      fd.append("message", document.getElementById("message").value);
+    }
 
     try {
       const response = await fetch("mail.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData).toString(),
+        body: fd,
       });
 
       if (response.ok) {
@@ -38,11 +50,16 @@ const ContactForm = () => {
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
         document.getElementById("subject").value = "";
-        document.getElementById("message").value = "";
+        if (contactMessageTypeAudio) {
+          resetAudioPlayerRef.current?.();
+        } else {
+          document.getElementById("message").value = "";
+        }
       } else {
         showToast("Une erreur est survenue", "error");
       }
     } catch (error) {
+      console.error(error);
       showToast("Une erreur est survenue", "error");
     }
   };
@@ -93,11 +110,13 @@ const ContactForm = () => {
               Laissez moi un message audio !
             </p>
             <p className={styles.contactAudioPlayerLabel}>
-              Prise de contact, témoignage, ou simple bonjour{" "}
-              <WaveEmoji />
+              Prise de contact, témoignage, ou simple bonjour <WaveEmoji />
             </p>
           </div>
           <VoiceRecordPlayer
+            onResetRef={(resetFn) => {
+              resetAudioPlayerRef.current = resetFn;
+            }}
             onRecordingComplete={(audioBlob) => {
               setContactMessageAudio(audioBlob);
             }}
@@ -115,14 +134,11 @@ const ContactForm = () => {
           required
         />
       )}
-      <GlassButton
-        className={styles.contactFormSubmitButton}
-        type="submit"
-      >
+      <GlassButton className={styles.contactFormSubmitButton} type="submit">
         Envoyer
       </GlassButton>
     </form>
-  )
-}
+  );
+};
 
 export default ContactForm;

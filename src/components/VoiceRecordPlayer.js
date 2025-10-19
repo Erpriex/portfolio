@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import styles from "../styles/components/VoiceRecordPlayer.module.scss";
 import { showToast } from "../utils/Toast";
 
@@ -6,6 +6,7 @@ const VoiceRecordPlayer = ({
   className = "",
   onRecordingComplete = () => {},
   onDelete = () => {},
+  onResetRef = (handleDelete) => {},
   disabled = false,
 }) => {
   const [isRecording, setIsRecording] = useState(false);
@@ -21,15 +22,30 @@ const VoiceRecordPlayer = ({
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
 
+  // 🔒 Refs "sources de vérité" pour éviter de recréer handleDelete
+  const audioURLRef = useRef(null);
+  const disabledRef = useRef(disabled);
+  const onDeleteRef = useRef(onDelete);
+
+  useEffect(() => {
+    audioURLRef.current = audioURL;
+  }, [audioURL]);
+
+  useEffect(() => {
+    disabledRef.current = disabled;
+  }, [disabled]);
+
+  useEffect(() => {
+    onDeleteRef.current = onDelete;
+  }, [onDelete]);
+
   useEffect(() => {
     if (isRecording) {
       recordingIntervalRef.current = setInterval(() => {
         setRecordingTime((prev) => prev + 1);
       }, 1000);
-    } else {
-      if (recordingIntervalRef.current) {
-        clearInterval(recordingIntervalRef.current);
-      }
+    } else if (recordingIntervalRef.current) {
+      clearInterval(recordingIntervalRef.current);
     }
 
     return () => {
@@ -46,7 +62,7 @@ const VoiceRecordPlayer = ({
   };
 
   const handleRecord = async () => {
-    if (disabled) return;
+    if (disabledRef.current) return;
 
     if (isRecording) {
       if (
@@ -82,7 +98,6 @@ const VoiceRecordPlayer = ({
           const url = URL.createObjectURL(audioBlob);
           setAudioURL(url);
           setHasRecording(true);
-
           onRecordingComplete(audioBlob);
         };
 
@@ -103,7 +118,7 @@ const VoiceRecordPlayer = ({
   };
 
   const handlePlayPause = () => {
-    if (!hasRecording || disabled) return;
+    if (!hasRecording || disabledRef.current) return;
 
     if (isPlaying) {
       audioRef.current?.pause();
@@ -114,8 +129,8 @@ const VoiceRecordPlayer = ({
     }
   };
 
-  const handleDelete = () => {
-    if (disabled) return;
+  const handleDelete = useCallback(() => {
+    if (disabledRef.current) return;
 
     setIsClosing(true);
 
@@ -124,8 +139,9 @@ const VoiceRecordPlayer = ({
       audioRef.current.currentTime = 0;
     }
 
-    if (audioURL) {
-      URL.revokeObjectURL(audioURL);
+    const url = audioURLRef.current;
+    if (url) {
+      URL.revokeObjectURL(url);
     }
 
     setTimeout(() => {
@@ -135,9 +151,15 @@ const VoiceRecordPlayer = ({
       setRecordingTime(0);
       setAudioURL(null);
       setIsClosing(false);
-      onDelete();
+      // onDelete le plus récent
+      onDeleteRef.current?.();
     }, 800);
-  };
+  }, []); // ← stable
+
+  // Passe une référence stable au parent
+  useEffect(() => {
+    onResetRef(handleDelete);
+  }, [onResetRef, handleDelete]);
 
   const handleTimeUpdate = () => {
     if (audioRef.current) {
@@ -172,9 +194,11 @@ const VoiceRecordPlayer = ({
         </div>
         {isRecording && <div className={styles.pulseRing}></div>}
       </button>
+
       <div className={styles.timeDisplay}>
         {isRecording ? formatTime(recordingTime) : formatTime(currentTime)}
       </div>
+
       {hasRecording && (
         <>
           <button
@@ -195,6 +219,7 @@ const VoiceRecordPlayer = ({
               </svg>
             )}
           </button>
+
           <button
             className={`${styles.deleteButton} ${isClosing ? styles.fadeOutSlide : styles.fadeInSlide} ${styles.delayLong}`}
             onClick={handleDelete}
@@ -209,6 +234,7 @@ const VoiceRecordPlayer = ({
           </button>
         </>
       )}
+
       <audio
         ref={audioRef}
         src={audioURL}
