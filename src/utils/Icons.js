@@ -10,7 +10,7 @@ export const ClickIcon = ({ size = 31 }) => {
       <g id="icon-park-solid:click">
         <mask
           id="mask0_16_193"
-          maskType="alpha"
+          mask-type="alpha"
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"
