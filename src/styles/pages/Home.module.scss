@@ -1,4 +1,4 @@
-@import "../mixins";
+@use "../mixins" as *;
 
 .container {
   padding-left: 15%;
