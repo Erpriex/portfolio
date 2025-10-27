@@ -50,7 +50,7 @@ const HomePage = () => {
           <Project
             company="ESPL"
             title="RIFRAICH"
-            description="RIFRAICH est une marketplace dédiée aux friperies locales, qui rassemble une sélection de vêtements vintage et de seconde main. La plateforme met en valeur les boutiques indépendantes en leur offrant une vitrine en ligne commune, alliant mode responsable, économie circulaire et commerce de proximité."
+            description="Plateforme SaaS de gestion et de vente en ligne dédiée aux professionnels de la seconde main. Elle permet de digitaliser la gestion des boutiques, du stock, de la clientèle et des ventes, afin de faciliter le pilotage quotidien et d’améliorer la visibilité en ligne."
             img={rifraichImg}
             link="https://rifraich.fr/"
             isFirst
