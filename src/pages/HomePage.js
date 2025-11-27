@@ -10,12 +10,21 @@ import rifraichImg from "../assets/img/rifraich.png";
 import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
+import ymauffreyImg from "../assets/img/ymauffrey.png";
 import ContactForm from "../components/ContactForm";
 
 const HomePage = () => {
   const currentDate = new Date();
 
   const recommendations = [
+    {
+      img: ymauffreyImg,
+      name: "Yann Mauffrey",
+      job: "CTO & Senior Data Scientist",
+      content:
+        "J'ai eu le plaisir d'encadrer Clément pendant son alternance chez Gleeph. En tant que développeur frontend, il a rapidement fait ses preuves grâce à sa maîtrise de NextJs, de React Native et ReactJs. Son sens aigu du détail, son approche positive et collaborative ont fait de lui une pièce essentielle de l'équipe. Son envie de monter en compétence l’a aussi poussé à explorer le backend, ce qui n'a fait que renforcer sa polyvalence.\n" +
+        "Si vous cherchez un développeur compétent, fiable et surtout agréable à côtoyer au quotidien, Clément est le profil idéal. Je le recommande vivement !",
+    },
     {
       img: glecomteImg,
       name: "Guillaume Lecomte",
@@ -72,7 +81,7 @@ const HomePage = () => {
           />
         </aside>
         <section className={styles.recommendationsSection}>
-          <h2 className={styles.recommendationsTitle}>Recommandation</h2>
+          <h2 className={styles.recommendationsTitle}>Recommandations</h2>
           <section className={styles.recommendationsContent}>
             {recommendations.map((rec, i) => (
               <RecommendationCard
