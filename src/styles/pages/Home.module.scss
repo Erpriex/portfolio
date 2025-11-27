@@ -95,6 +95,7 @@
   margin-top: 70px;
   display: flex;
   gap: 20px;
+  align-items: flex-start;
   @include for-phone-only {
     flex-direction: column;
   }
