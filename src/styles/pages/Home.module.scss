@@ -1,6 +1,8 @@
 @use "../mixins" as *;
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-left: 15%;
   padding-right: 15%;
   padding-bottom: 30px;

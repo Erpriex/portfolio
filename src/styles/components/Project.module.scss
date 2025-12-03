@@ -12,7 +12,7 @@
     transform 0.8s ease-out;
   will-change: opacity, transform;
 
-  @include for-desktop-only {
+  @include for-desktop-up {
     &:hover {
       .descriptionContainer {
         background: rgba(255, 255, 255, 0.08);
