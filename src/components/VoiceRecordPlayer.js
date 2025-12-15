@@ -22,10 +22,12 @@ const VoiceRecordPlayer = ({
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
 
-  // 🔒 Refs "sources de vérité" pour éviter de recréer handleDelete
   const audioURLRef = useRef(null);
   const disabledRef = useRef(disabled);
   const onDeleteRef = useRef(onDelete);
+
+  // Nouveau: mémorise le mimeType réellement utilisé
+  const recordingMimeTypeRef = useRef("");
 
   useEffect(() => {
     audioURLRef.current = audioURL;
@@ -55,6 +57,29 @@ const VoiceRecordPlayer = ({
     };
   }, [isRecording]);
 
+  const pickSupportedMimeType = () => {
+    if (typeof MediaRecorder === "undefined") return "";
+
+    const candidates = [
+      "audio/mp4",
+      "audio/aac",
+      // Chrome/Android
+      "audio/webm;codecs=opus",
+      "audio/webm",
+      // fallback
+      "audio/ogg;codecs=opus",
+    ];
+
+    for (const type of candidates) {
+      try {
+        if (MediaRecorder.isTypeSupported(type)) return type;
+      } catch {
+        // ignore
+      }
+    }
+    return "";
+  };
+
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
@@ -82,7 +107,14 @@ const VoiceRecordPlayer = ({
         });
 
         audioChunksRef.current = [];
-        const mediaRecorder = new MediaRecorder(stream);
+
+        const mimeType = pickSupportedMimeType();
+        recordingMimeTypeRef.current = mimeType;
+
+        const mediaRecorder = mimeType
+          ? new MediaRecorder(stream, { mimeType })
+          : new MediaRecorder(stream);
+
         mediaRecorderRef.current = mediaRecorder;
 
         mediaRecorder.ondataavailable = (event) => {
@@ -92,10 +124,16 @@ const VoiceRecordPlayer = ({
         };
 
         mediaRecorder.onstop = () => {
+          const effectiveType =
+            recordingMimeTypeRef.current ||
+            (audioChunksRef.current[0] && audioChunksRef.current[0].type) ||
+            "audio/webm";
+
           const audioBlob = new Blob(audioChunksRef.current, {
-            type: "audio/webm",
+            type: effectiveType,
           });
           const url = URL.createObjectURL(audioBlob);
+
           setAudioURL(url);
           setHasRecording(true);
           onRecordingComplete(audioBlob);
@@ -124,7 +162,17 @@ const VoiceRecordPlayer = ({
       audioRef.current?.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current?.play();
+      const p = audioRef.current?.play();
+      if (p && typeof p.catch === "function") {
+        p.catch((err) => {
+          console.error("Lecture audio impossible:", err);
+          setIsPlaying(false);
+          showToast(
+            "Lecture impossible sur ce téléphone (format non supporté).",
+            "error",
+          );
+        });
+      }
       setIsPlaying(true);
     }
   };
@@ -151,12 +199,10 @@ const VoiceRecordPlayer = ({
       setRecordingTime(0);
       setAudioURL(null);
       setIsClosing(false);
-      // onDelete le plus récent
       onDeleteRef.current?.();
     }, 800);
-  }, []); // ← stable
+  }, []);
 
-  // Passe une référence stable au parent
   useEffect(() => {
     onResetRef(handleDelete);
   }, [onResetRef, handleDelete]);
