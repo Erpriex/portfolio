@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/components/RecommendationCard.module.scss";
 
-const RecommendationCard = ({ img, name, job, content }) => {
+const RecommendationCard = ({ img, name, job, link, content }) => {
   const gradients = [
     "linear-gradient(110deg, #130428 19.95%, #251043 67.64%, #38126D 107.08%, #261045 156.61%, #190634 183.21%)",
     "linear-gradient(96deg,  #130428 0.58%,  #251043 16.32%,  #38126D 29.33%,  #261045 45.66%,  #190634 54.44%)",
@@ -12,7 +12,11 @@ const RecommendationCard = ({ img, name, job, content }) => {
   const gradient = gradients[Math.floor(Math.random() * gradients.length)];
 
   return (
-    <section className={styles.container} style={{ background: gradient }}>
+    <section
+      className={styles.container}
+      style={{ background: gradient }}
+      onClick={() => window.open(link, "_blank")}
+    >
       <section className={styles.header}>
         <img className={styles.img} src={img} alt={name} />
         <section>

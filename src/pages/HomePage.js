@@ -20,7 +20,8 @@ const HomePage = () => {
     {
       img: ymauffreyImg,
       name: "Yann Mauffrey",
-      job: "CTO & Senior Data Scientist",
+      job: "CTO & Senior Data Scientist chez Gleeph",
+      link: "https://www.linkedin.com/in/yann-mauffrey-8b33b6106",
       content:
         "J'ai eu le plaisir d'encadrer Clément pendant son alternance chez Gleeph. En tant que développeur frontend, il a rapidement fait ses preuves grâce à sa maîtrise de NextJs, de React Native et ReactJs. Son sens aigu du détail, son approche positive et collaborative ont fait de lui une pièce essentielle de l'équipe. Son envie de monter en compétence l’a aussi poussé à explorer le backend, ce qui n'a fait que renforcer sa polyvalence.\n" +
         "Si vous cherchez un développeur compétent, fiable et surtout agréable à côtoyer au quotidien, Clément est le profil idéal. Je le recommande vivement !",
@@ -28,7 +29,8 @@ const HomePage = () => {
     {
       img: glecomteImg,
       name: "Guillaume Lecomte",
-      job: "Développeur Full Stack",
+      job: "Développeur Full Stack chez Dioqa",
+      link: "https://www.linkedin.com/in/guillaumelecomte-pro/",
       content:
         "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
     },
@@ -61,7 +63,6 @@ const HomePage = () => {
             title="RIFRAICH"
             description="Plateforme SaaS de gestion et de vente en ligne dédiée aux professionnels de la seconde main. Elle permet de digitaliser la gestion des boutiques, du stock, de la clientèle et des ventes, afin de faciliter le pilotage quotidien et d’améliorer la visibilité en ligne."
             img={rifraichImg}
-            link="https://rifraich.fr/"
             isFirst
           />
           <Project
@@ -89,6 +90,7 @@ const HomePage = () => {
                 img={rec.img}
                 name={rec.name}
                 job={rec.job}
+                link={rec.link}
                 content={rec.content}
               />
             ))}

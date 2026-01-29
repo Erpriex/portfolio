@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .container {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -46,6 +48,26 @@
   }
 
   transition: all 0.3s ease;
+  cursor: pointer;
+
+  @include for-desktop-up {
+    &:hover {
+      transform: scale(1.02);
+      box-shadow:
+        0 8px 32px 0 rgba(152, 87, 211, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+
+      .img {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(152, 87, 211, 0.6);
+      }
+
+      .name {
+        color: rgba(152, 87, 211, 1);
+      }
+    }
+  }
 }
 
 .header {
