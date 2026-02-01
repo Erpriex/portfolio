@@ -49,7 +49,8 @@ const HomePage = () => {
       name: "Famille",
       job: "",
       link: "",
-      content: "On pensait que c’était un hobby… puis il a payé un loyer avec.",
+      content:
+        "On pensait que c’était un hobby… puis il a payé un loyer avec !",
     },
   ];
 
