@@ -20,18 +20,23 @@ const RecommendationCard = ({ img, name, job, link, content }) => {
     }
   }, [isVisible]);
 
+  const handleClick = () => {
+    if (!link) return;
+    window.open(link, "_blank");
+  };
+
   return (
     <section
       ref={ref}
       className={`${styles.container} ${hasAppeared ? styles.appear : ""}`}
       style={{ background: gradient }}
-      onClick={() => window.open(link, "_blank")}
+      onClick={handleClick}
     >
       <section className={styles.header}>
         <img className={styles.img} src={img} alt={name} />
         <section>
           <h3 className={styles.name}>{name}</h3>
-          <p className={styles.job}>{job}</p>
+          {job && <p className={styles.job}>{job}</p>}
         </section>
       </section>
       <p className={styles.content}>{content}</p>
