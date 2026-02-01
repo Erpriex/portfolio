@@ -11,6 +11,7 @@ import bookmetrieImg from "../assets/img/bookmetrie.jpeg";
 import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
 import ymauffreyImg from "../assets/img/ymauffrey.png";
+import aglacialImg from "../assets/img/aglacial.png";
 import ContactForm from "../components/ContactForm";
 
 const HomePage = () => {
@@ -34,6 +35,14 @@ const HomePage = () => {
       content:
         "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
     },
+    {
+      img: aglacialImg,
+      name: "Alban Glacial",
+      job: "Ingénieur infrastructure au Centre Hospitalier de Quimper",
+      link: "https://www.linkedin.com/in/alban-glacial-39966224b/",
+      content:
+        "Clément est un développeur web talentueux et rigoureux. Il se distingue également par une grande intelligence relationnelle : toujours à l’écoute, bienveillant et excellent en travail d’équipe !",
+    },
   ];
 
   return (
@@ -47,13 +56,13 @@ const HomePage = () => {
             <h1
               className={`${styles.mainTitle} ${styles.appear} ${styles["appear--delay-1"]}`}
             >
-              Hello <WaveEmoji />, moi c'est Clément !
+              Salut <WaveEmoji />, moi c'est Clément !
             </h1>
             <p
               className={`${styles.mainSubtitle} ${styles.appear} ${styles["appear--delay-2"]}`}
             >
-              Développement 💻 | DevOps 🚀 | Gestion de projet 🌍 |
-              Collaboration en équipe 🤝
+              Développement 💻 | DevOps 🚀 | Gestion de projet 🌍 | Vision
+              produit 🧭
             </p>
           </div>
         </main>
@@ -82,7 +91,7 @@ const HomePage = () => {
           />
         </aside>
         <section className={styles.recommendationsSection}>
-          <h2 className={styles.recommendationsTitle}>Recommandations</h2>
+          <h2 className={styles.recommendationsTitle}>Témoignages</h2>
           <section className={styles.recommendationsContent}>
             {recommendations.map((rec, i) => (
               <RecommendationCard

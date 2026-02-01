@@ -1,15 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "../styles/components/ContactForm.module.scss";
 import GlassSwitch from "./GlassSwitch";
 import WaveEmoji from "./WaveEmoji";
 import VoiceRecordPlayer from "./VoiceRecordPlayer";
 import GlassButton from "./GlassButton";
 import { showToast } from "../utils/Toast";
+import useOnScreen from "../hooks/useOnScreen";
 
 const ContactForm = () => {
   const [contactMessageTypeAudio, setContactMessageTypeAudio] = useState(true);
   const [contactMessageAudio, setContactMessageAudio] = useState(null);
   const resetAudioPlayerRef = useRef(null);
+  const [formRef, isFormVisible] = useOnScreen({ threshold: 0.2 });
+  const [hasFormAppeared, setHasFormAppeared] = useState(false);
+
+  useEffect(() => {
+    if (isFormVisible) {
+      setHasFormAppeared(true);
+    }
+  }, [isFormVisible]);
 
   const handleContactMessageTypeChange = (newState) => {
     setContactMessageTypeAudio(newState);
@@ -66,12 +75,13 @@ const ContactForm = () => {
 
   return (
     <form
+      ref={formRef}
       name="contact"
       onSubmit={handleContactForm}
       className={styles.contactForm}
     >
       <input
-        className={styles.contactFormInput}
+        className={`${styles.contactFormInput} ${hasFormAppeared ? styles.appear : ""}`}
         type="text"
         id="name"
         name="name"
@@ -79,7 +89,7 @@ const ContactForm = () => {
         required
       />
       <input
-        className={styles.contactFormInput}
+        className={`${styles.contactFormInput} ${styles.delay1} ${hasFormAppeared ? styles.appear : ""}`}
         type="text"
         id="email"
         name="email"
@@ -87,14 +97,16 @@ const ContactForm = () => {
         required
       />
       <input
-        className={styles.contactFormInput}
+        className={`${styles.contactFormInput} ${styles.delay2} ${hasFormAppeared ? styles.appear : ""}`}
         type="text"
         id="subject"
         name="subject"
         placeholder="Objet"
         required
       />
-      <div className={styles.contactMessageHeader}>
+      <div
+        className={`${styles.contactMessageHeader} ${styles.delay3} ${hasFormAppeared ? styles.appear : ""}`}
+      >
         <p className={styles.contactMessageHeaderLabel}>
           Message {contactMessageTypeAudio ? "vocal" : "texte"}
         </p>
@@ -104,7 +116,9 @@ const ContactForm = () => {
         />
       </div>
       {contactMessageTypeAudio ? (
-        <div className={styles.contactAudioPlayerContainer}>
+        <div
+          className={`${styles.contactAudioPlayerContainer} ${styles.delay4} ${hasFormAppeared ? styles.appear : ""}`}
+        >
           <div className={styles.contactAudioPlayerLabelContainer}>
             <p className={styles.contactAudioPlayerLabel}>
               Laissez moi un message audio !
@@ -127,14 +141,17 @@ const ContactForm = () => {
         </div>
       ) : (
         <textarea
-          className={styles.contactFormTextarea}
+          className={`${styles.contactFormTextarea} ${styles.delay4} ${hasFormAppeared ? styles.appear : ""}`}
           id="message"
           name="message"
           placeholder="Votre message"
           required
         />
       )}
-      <GlassButton className={styles.contactFormSubmitButton} type="submit">
+      <GlassButton
+        className={`${styles.contactFormSubmitButton} ${styles.delay5} ${hasFormAppeared ? styles.appear : ""}`}
+        type="submit"
+      >
         Envoyer
       </GlassButton>
     </form>

@@ -83,6 +83,16 @@
   @include for-phone-only {
     margin-top: 100px;
   }
+
+  .recommendationsContent > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .recommendationsContent > *:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .recommendationsContent > *:nth-child(4) {
+    animation-delay: 0.6s;
+  }
 }
 
 .recommendationsTitle {
@@ -95,14 +105,14 @@
 
 .recommendationsContent {
   margin-top: 70px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  @include for-phone-only {
-    flex-direction: column;
+  columns: 2;
+  column-gap: 20px;
+  @include for-tablet-only {
+    columns: 1;
   }
   > * {
-    flex: 1;
+    break-inside: avoid;
+    margin-bottom: 20px;
   }
 }
 

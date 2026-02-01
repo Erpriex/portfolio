@@ -16,6 +16,9 @@
   position: relative;
   overflow: hidden;
 
+  opacity: 0;
+  transform: translateY(20px);
+
   &::before {
     content: "";
     position: absolute;
@@ -47,12 +50,14 @@
     border-radius: 20px 20px 0 0;
   }
 
-  transition: all 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
   cursor: pointer;
 
   @include for-desktop-up {
     &:hover {
-      transform: scale(1.02);
       box-shadow:
         0 8px 32px 0 rgba(152, 87, 211, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
@@ -124,4 +129,25 @@
   position: relative;
   z-index: 2;
   transition: color 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appear {
+  animation: fadeInUp 0.8s ease-out forwards;
+
+  @include for-desktop-up {
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }

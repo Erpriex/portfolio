@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/components/RecommendationCard.module.scss";
+import useOnScreen from "../hooks/useOnScreen";
 
 const RecommendationCard = ({ img, name, job, link, content }) => {
   const gradients = [
@@ -10,10 +11,19 @@ const RecommendationCard = ({ img, name, job, link, content }) => {
   ];
 
   const gradient = gradients[Math.floor(Math.random() * gradients.length)];
+  const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
+  const [hasAppeared, setHasAppeared] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      setHasAppeared(true);
+    }
+  }, [isVisible]);
 
   return (
     <section
-      className={styles.container}
+      ref={ref}
+      className={`${styles.container} ${hasAppeared ? styles.appear : ""}`}
       style={{ background: gradient }}
       onClick={() => window.open(link, "_blank")}
     >

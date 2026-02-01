@@ -27,6 +27,9 @@
   position: relative;
   overflow: hidden;
 
+  opacity: 0;
+  transform: translateY(20px);
+
   &::before {
     content: "";
     position: absolute;
@@ -70,6 +73,8 @@
   justify-content: center;
   width: 100%;
   gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .contactMessageHeaderLabel {
@@ -88,6 +93,8 @@
   width: 100%;
   gap: 20px;
   margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .contactAudioPlayerLabelContainer {
@@ -128,6 +135,9 @@
 
   position: relative;
   overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(20px);
 
   &::before {
     content: "";
@@ -176,4 +186,41 @@
   padding-left: 50px;
   padding-right: 50px;
   margin-left: auto;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appear {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay1 {
+  animation-delay: 0.1s;
+}
+
+.delay2 {
+  animation-delay: 0.2s;
+}
+
+.delay3 {
+  animation-delay: 0.3s;
+}
+
+.delay4 {
+  animation-delay: 0.4s;
+}
+
+.delay5 {
+  animation-delay: 0.5s;
 }
