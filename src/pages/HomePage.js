@@ -12,7 +12,6 @@ import gleephImg from "../assets/img/gleeph.jpg";
 import glecomteImg from "../assets/img/glecomte.png";
 import ymauffreyImg from "../assets/img/ymauffrey.png";
 import aglacialImg from "../assets/img/aglacial.png";
-import anyPersonImg from "../assets/img/anyperson.png";
 import ContactForm from "../components/ContactForm";
 
 const HomePage = () => {
@@ -43,14 +42,6 @@ const HomePage = () => {
       link: "https://www.linkedin.com/in/alban-glacial-39966224b/",
       content:
         "Clément est un développeur web talentueux et rigoureux. Il se distingue également par une grande intelligence relationnelle : toujours à l’écoute, bienveillant et excellent en travail d’équipe !",
-    },
-    {
-      img: anyPersonImg,
-      name: "Famille",
-      job: "",
-      link: "",
-      content:
-        "On pensait que c’était un hobby… puis il a payé un loyer avec !",
     },
   ];
 
