@@ -21,7 +21,7 @@ const HomePage = () => {
     {
       img: ymauffreyImg,
       name: "Yann Mauffrey",
-      job: "CTO & Senior Data Scientist chez Gleeph",
+      job: "CTO & Senior Data Scientist @ Gleeph",
       link: "https://www.linkedin.com/in/yann-mauffrey-8b33b6106",
       content:
         "J'ai eu le plaisir d'encadrer Clément pendant son alternance chez Gleeph. En tant que développeur frontend, il a rapidement fait ses preuves grâce à sa maîtrise de NextJs, de React Native et ReactJs. Son sens aigu du détail, son approche positive et collaborative ont fait de lui une pièce essentielle de l'équipe. Son envie de monter en compétence l’a aussi poussé à explorer le backend, ce qui n'a fait que renforcer sa polyvalence.\n" +
@@ -30,7 +30,7 @@ const HomePage = () => {
     {
       img: glecomteImg,
       name: "Guillaume Lecomte",
-      job: "Développeur Full Stack chez Dioqa",
+      job: "Développeur Full Stack @ Dioqa",
       link: "https://www.linkedin.com/in/guillaumelecomte-pro/",
       content:
         "Clément est un développeur full stack talentueux, alliant rigueur technique et leadership collaboratif. Toujours à l’écoute et force de proposition, c’est un partenaire idéal pour des projets ambitieux. Un plaisir de coder à ses côtés !",
@@ -38,7 +38,7 @@ const HomePage = () => {
     {
       img: aglacialImg,
       name: "Alban Glacial",
-      job: "Ingénieur infrastructure au Centre Hospitalier de Quimper",
+      job: "Ingénieur infrastructure @ Centre Hospitalier de Quimper",
       link: "https://www.linkedin.com/in/alban-glacial-39966224b/",
       content:
         "Clément est un développeur web talentueux et rigoureux. Il se distingue également par une grande intelligence relationnelle : toujours à l’écoute, bienveillant et excellent en travail d’équipe !",
